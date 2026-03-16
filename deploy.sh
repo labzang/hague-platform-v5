@@ -32,7 +32,7 @@ docker-compose -f api.labzang.com/docker-compose.prod.yml up -d
 echo "🔍 서비스 상태 확인..."
 sleep 30
 
-if curl -f http://localhost:8080/docs > /dev/null 2>&1; then
+if curl -f api.labzang.com/docs > /dev/null 2>&1; then
     echo "✅ 배포 성공! API가 정상 동작 중입니다."
     echo "🌐 API 문서: http://your-ec2-ip:8080/docs"
 else

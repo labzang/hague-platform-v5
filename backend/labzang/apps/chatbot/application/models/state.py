@@ -1,0 +1,1 @@
+# LangGraph TypedDict (전역 상태)

@@ -1,0 +1,54 @@
+version: '3.8'
+
+services:
+  labzang-api:
+    image: pakjkwan/labzang-api:latest  # Docker Hub 이미지 사용
+    container_name: labzang-api
+    ports:
+      - "8080:8080"
+    env_file:
+      - .env
+    environment:
+      # 프로덕션 프로파일
+      - SPRING_PROFILES_ACTIVE=prod
+      
+      # 데이터베이스 설정
+      - SPRING_DATASOURCE_URL=${SPRING_DATASOURCE_URL}
+      - SPRING_DATASOURCE_USERNAME=${SPRING_DATASOURCE_USERNAME}
+      - SPRING_DATASOURCE_PASSWORD=${SPRING_DATASOURCE_PASSWORD}
+      
+      # Redis 설정 (Upstash)
+      - UPSTASH_REDIS_HOST=${UPSTASH_REDIS_HOST}
+      - UPSTASH_REDIS_PORT=${UPSTASH_REDIS_PORT}
+      - UPSTASH_REDIS_PASSWORD=${UPSTASH_REDIS_PASSWORD}
+      
+      # JWT 설정
+      - JWT_SECRET=${JWT_SECRET}
+      - JWT_ACCESS_TOKEN_EXPIRATION=${JWT_ACCESS_TOKEN_EXPIRATION:-3600000}
+      - JWT_REFRESH_TOKEN_EXPIRATION=${JWT_REFRESH_TOKEN_EXPIRATION:-2592000000}
+      
+      # OAuth 설정
+      - GOOGLE_CLIENT_ID=${GOOGLE_CLIENT_ID}
+      - GOOGLE_CLIENT_SECRET=${GOOGLE_CLIENT_SECRET}
+      - GOOGLE_REDIRECT_URI=${GOOGLE_REDIRECT_URI}
+      - KAKAO_REST_API_KEY=${KAKAO_REST_API_KEY}
+      - KAKAO_REDIRECT_URI=${KAKAO_REDIRECT_URI}
+      
+      # 프로덕션 URL 설정
+      - FRONTEND_URL=${FRONTEND_URL}
+      - API_BASE_URL=${API_BASE_URL}
+      - CORS_ALLOWED_ORIGINS=${CORS_ALLOWED_ORIGINS}
+      
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "api.labzang.com/docs"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 60s
+    networks:
+      - labzang-network
+
+networks:
+  labzang-network:
+    driver: bridge
