@@ -1,2 +1,2 @@
-"""Core 모듈."""
+# Common utilities and shared code for AI services
 
