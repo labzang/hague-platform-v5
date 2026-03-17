@@ -1,1 +1,0 @@
-# 노드 간 통신용 DTO (Input/Output 계약)

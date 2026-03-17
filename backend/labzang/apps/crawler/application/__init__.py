@@ -1,3 +1,1 @@
-# Auth Service Package
-
-
+# Crawler Application (config, main, use_cases)

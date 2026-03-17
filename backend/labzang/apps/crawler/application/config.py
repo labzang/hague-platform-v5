@@ -1,7 +1,7 @@
 """
 Crawler Service 설정
 """
-from common.config import BaseServiceConfig
+from labzang.core.config import BaseServiceConfig
 
 
 class CrawlerServiceConfig(BaseServiceConfig):
