@@ -1,9 +1,9 @@
-"""LLM 팩토리 - 설정에 따라 LLM 생성 (인바운드 진입점)."""
+"""설정에 따라 LLM 인스턴스를 생성하는 인바운드 팩토리."""
 from typing import Any, Optional
 
-from ...domain.value_objects import LlmConfig
-from ...application.use_cases import CreateLlmFromConfigUseCase
-from ..outbound import ChatLLMAdapter, LLMType
+from ....domain.value_objects import LlmConfig
+from ....application.use_cases import CreateLlmFromConfigUseCase
+from ...outbound import ChatLLMAdapter, LLMType
 
 
 def create_llm_from_config(settings: Any) -> Optional[LLMType]:

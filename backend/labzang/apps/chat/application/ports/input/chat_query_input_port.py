@@ -1,6 +1,6 @@
 """
 인바운드(드라이빙) 포트: 채팅 요청 — API/인바운드가 호출하는 유스케이스 계약.
-구현: use_cases 또는 hub/orchestrators.
+구현: use_cases 또는 use_cases/hub/orchestrators.
 """
 from abc import ABC, abstractmethod
 

@@ -1,6 +1,6 @@
 """
 인바운드(드라이빙) 포트: RAG 질의 — API/인바운드가 호출하는 유스케이스 계약.
-구현: hub/orchestrators 또는 use_cases.
+구현: use_cases/hub/orchestrators.
 """
 from abc import ABC, abstractmethod
 

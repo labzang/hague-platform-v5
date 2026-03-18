@@ -1,8 +1,8 @@
 """
-스포크: 답변 생성 — QLoRAChatPort 또는 ChatLLM 래퍼만 사용.
+스포크: 답변 생성 — QLoRAChatPort만 사용.
 """
-from ..DTOs import ChatRequestDto, ChatResponseDto
-from ..ports.output import QLoRAChatPort
+from ...DTOs import ChatRequestDto, ChatResponseDto
+from ...ports.output import QLoRAChatPort
 
 
 class GenerateAnswerSpoke:

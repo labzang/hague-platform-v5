@@ -1,8 +1,8 @@
 """
 스포크: 벡터 검색 — VectorRepositoryPort만 사용.
 """
-from ..DTOs import DocumentDto, SearchQueryDto, SearchResultDto
-from ..ports.output import VectorRepositoryPort
+from ...DTOs import DocumentDto, SearchQueryDto, SearchResultDto
+from ...ports.output import VectorRepositoryPort
 
 
 class SearchSpoke:

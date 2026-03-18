@@ -3,7 +3,7 @@
 """
 from ..DTOs import SearchQueryDto, SearchResultDto
 from ..ports.input import SearchInputPort
-from ..spokes import SearchSpoke
+from .spokes import SearchSpoke
 
 
 class SearchUseCase(SearchInputPort):

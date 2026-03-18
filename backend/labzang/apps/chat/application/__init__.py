@@ -1,4 +1,4 @@
-# Chat Application — DTOs, ports(input/output), use_cases, hub, spokes
+# Chat Application — 계약(ports, DTOs) + 유스케이스(use_cases: orchestrators, spokes)
 from .DTOs import (
     BaseDto,
     ChatMessageDto,
@@ -10,7 +10,6 @@ from .DTOs import (
     SearchQueryDto,
     SearchResultDto,
 )
-from .hub import RAGOrchestrator
 from .ports import (
     ChatQueryInputPort,
     ChatLLMPort,
@@ -19,12 +18,14 @@ from .ports import (
     QLoRAChatPort,
     VectorRepositoryPort,
 )
-from .spokes import GenerateAnswerSpoke, SearchSpoke
 from .use_cases import (
     ChatQueryUseCase,
     CreateLlmFromConfigUseCase,
+    GenerateAnswerSpoke,
     QLoRAChatUseCase,
     QLoRATrainUseCase,
+    RAGOrchestrator,
+    SearchSpoke,
     SearchUseCase,
 )
 

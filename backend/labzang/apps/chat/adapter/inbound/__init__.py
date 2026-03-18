@@ -1,4 +1,4 @@
-# 인바운드: LLM 진입점은 create_llm_from_config만 (헥사고날 경계 준수)
-from .factory import create_llm_from_config
+# 인바운드: API(api/), 팩토리(factories/), hub_sink 등
+from .factories import create_llm_from_config
 
 __all__ = ["create_llm_from_config"]
