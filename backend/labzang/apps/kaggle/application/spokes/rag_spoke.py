@@ -4,7 +4,7 @@ RAG Spoke: RAG 기반 지식 반환 로직
 """
 from typing import Any, List, Optional
 
-# Port는 domain.ports에서 주입받음 (adapter가 구현체 제공)
+# Port는 application.ports에서 주입받음 (adapter가 구현체 제공)
 
 
 def run_rag(

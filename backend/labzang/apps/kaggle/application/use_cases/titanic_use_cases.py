@@ -3,7 +3,7 @@
 - 포트(인터페이스)만 의존, 비즈니스 오케스트레이션
 """
 
-from labzang.apps.kaggle.domain.ports import (
+from labzang.apps.kaggle.application.ports import (
     ITitanicDataPort,
     IPreprocessorPort,
     IModelRunnerPort,

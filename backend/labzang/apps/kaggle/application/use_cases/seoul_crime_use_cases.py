@@ -2,7 +2,7 @@
 서울 범죄 유스케이스 (포트만 의존, 비즈니스 오케스트레이션)
 """
 
-from labzang.apps.kaggle.domain.ports import (
+from labzang.apps.kaggle.application.ports import (
     ISeoulDataPort,
     ISeoulPreprocessorPort,
     IGeocodePort,

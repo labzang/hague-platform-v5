@@ -1,19 +1,14 @@
 """
 크롤러 헥사고날 API (인바운드 어댑터)
-- 포트 구현체 조립 → 유스케이스 호출 → HTTP
+- 유스케이스는 조립 루트(dependencies)에서 주입받음. 출력 어댑터 직접 참조 없음.
 """
-from fastapi import APIRouter, HTTPException
+from fastapi import APIRouter, Depends
 
-from labzang.apps.crawler.domain.ports import IChartCrawlPort
 from labzang.apps.crawler.application.use_cases import CrawlBugsChartUseCase
-from labzang.apps.crawler.adapter.output.crawler_adapters import BugsCrawlAdapter
+from labzang.apps.crawler.adapter.input.dependencies import get_crawl_use_case
 from labzang.shared import create_response, create_error_response, ServiceException
 
 router = APIRouter(prefix="/crawler", tags=["crawler"])
-
-
-def _create_chart_crawl_port() -> IChartCrawlPort:
-    return BugsCrawlAdapter()
 
 
 @router.get("/")
@@ -26,11 +21,11 @@ async def crawler_root():
 
 
 @router.get("/bugsmusic")
-async def get_bugs_music_chart():
+async def get_bugs_music_chart(
+    use_case: CrawlBugsChartUseCase = Depends(get_crawl_use_case),
+):
     """벅스뮤직 실시간 차트 크롤링."""
     try:
-        port = _create_chart_crawl_port()
-        use_case = CrawlBugsChartUseCase(port)
         result = use_case.execute()
         if not result.songs:
             raise ServiceException("차트 데이터를 가져올 수 없습니다.")
