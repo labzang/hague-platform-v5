@@ -15,7 +15,7 @@ from fastapi.middleware.cors import CORSMiddleware
 
 from labzang.core.config import ChatbotServiceConfig
 from labzang.apps.chat.adapter.input.api import router as chat_router
-from labzang.apps.kaggle.adapter.input.api.v1 import (
+from labzang.apps.ml.adapter.input.api.v1 import (
     titanic_router as hex_titanic_router,
 )
 from labzang.core.middleware import LoggingMiddleware

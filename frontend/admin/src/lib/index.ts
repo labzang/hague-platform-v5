@@ -30,7 +30,7 @@ export {
   type Classification,
   type ClassificationData,
   type ClassifyResponse,
-  type HealthResponse,
+  type HealthResp,
   type WeatherMidForecastParams,
   type WeatherShortForecastParams,
   type WeatherRegionsResponse,

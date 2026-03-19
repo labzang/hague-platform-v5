@@ -14,7 +14,7 @@ import { fetchJSONFromAIGateway, fetchFromAIGateway } from './client';
 // 타입 정의
 // ============================================================================
 
-export interface HealthResponse {
+export interface HealthResp {
   status: string;
   service: string;
   message: string;
@@ -163,7 +163,7 @@ class AIGatewayClient {
    * GET /health
    */
   async healthCheck() {
-    const { data, error, status } = await fetchJSONFromAIGateway<HealthResponse>('/health');
+    const { data, error, status } = await fetchJSONFromAIGateway<HealthResp>('/health');
     
     if (error) {
       return {
@@ -293,7 +293,7 @@ class AIGatewayClient {
    * GET /weather/health
    */
   async getWeatherHealth() {
-    const { data, error, status } = await fetchJSONFromAIGateway<HealthResponse>('/weather/health');
+    const { data, error, status } = await fetchJSONFromAIGateway<HealthResp>('/weather/health');
 
     return {
       data,

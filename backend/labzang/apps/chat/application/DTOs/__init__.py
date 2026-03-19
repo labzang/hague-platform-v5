@@ -1,6 +1,6 @@
 """Application DTOs — 채팅/검색/RAG 유스케이스용 데이터 전달 객체."""
 from .base_dto import BaseDto
-from .chat_dtos import (
+from .chat_dto import (
     ChatMessageDto,
     ChatRequestDto,
     ChatResponseDto,

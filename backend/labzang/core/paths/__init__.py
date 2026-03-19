@@ -11,7 +11,7 @@ LABZANG_ROOT: Path = _LABZANG_ROOT.resolve()
 # 앱 루트들 (절대경로)
 APPS_ROOT: Path = LABZANG_ROOT / "apps"
 LEARNING_ROOT: Path = APPS_ROOT / "learning"
-KAGGLE_ROOT: Path = APPS_ROOT / "kaggle"
+ML_ROOT: Path = APPS_ROOT / "ml"
 CRAWLER_ROOT: Path = APPS_ROOT / "crawler"
 TRANSFORMER_ROOT: Path = APPS_ROOT / "transformer"
 CHAT_ROOT: Path = APPS_ROOT / "chat"
@@ -23,7 +23,7 @@ __all__ = [
     "LABZANG_ROOT",
     "APPS_ROOT",
     "LEARNING_ROOT",
-    "KAGGLE_ROOT",
+    "ML_ROOT",
     "CRAWLER_ROOT",
     "TRANSFORMER_ROOT",
     "CHAT_ROOT",

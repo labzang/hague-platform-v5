@@ -3,9 +3,9 @@
 from fastapi import APIRouter, Depends, HTTPException
 
 from labzang.apps.chat.adapter.input.api.v1.schemas import (
-    DocumentResponse,
+    DocumentResp,
     SearchRequest,
-    SearchResponse,
+    SearchResp,
 )
 from labzang.core.vectorstore import get_vectorstore, VectorStoreType
 
@@ -17,11 +17,11 @@ def get_vectorstore_dependency() -> VectorStoreType:
     return get_vectorstore()
 
 
-@router.post("", response_model=SearchResponse)
+@router.post("", response_model=SearchResp)
 async def vector_search(
     request: SearchRequest,
     vectorstore: VectorStoreType = Depends(get_vectorstore_dependency),
-) -> SearchResponse:
+) -> SearchResp:
     """
     벡터 유사도 검색을 수행합니다.
 
@@ -36,7 +36,7 @@ async def vector_search(
 
         # 응답 모델로 변환
         documents = [
-            DocumentResponse(
+            DocumentResp(
                 content=doc.page_content,
                 metadata=doc.metadata,
                 score=float(score),
@@ -44,7 +44,7 @@ async def vector_search(
             for doc, score in docs_with_scores
         ]
 
-        return SearchResponse(
+        return SearchResp(
             query=request.query,
             documents=documents,
             count=len(documents),
@@ -57,4 +57,3 @@ async def vector_search(
 async def search_health() -> dict:
     """검색 서비스 헬스체크."""
     return {"status": "healthy", "service": "vector_search"}
-
