@@ -11,10 +11,8 @@ from labzang.apps.ml.application.ports import (
 )
 
 
-class PreprocessTitanicUseCase:
-    def __init__(
-        self, data_port: TitanicDataPort, preprocessor_port: PreprocessorPort
-    ):
+class PreprocessTitanicUC:
+    def __init__(self, data_port: TitanicDataPort, preprocessor_port: PreprocessorPort):
         self._data = data_port
         self._preprocessor = preprocessor_port
 
@@ -35,7 +33,7 @@ class PreprocessTitanicUseCase:
         )
 
 
-class EvaluateTitanicUseCase:
+class EvaluateTitanicUC:
     def __init__(
         self,
         data_port: TitanicDataPort,
@@ -57,7 +55,7 @@ class EvaluateTitanicUseCase:
         )
 
 
-class SubmitTitanicUseCase:
+class SubmitTitanicUC:
     def __init__(
         self,
         data_port: TitanicDataPort,

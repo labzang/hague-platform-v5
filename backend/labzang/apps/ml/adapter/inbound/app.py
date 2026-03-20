@@ -2,6 +2,7 @@
 Kaggle(Titanic) 서비스 FastAPI 앱 조립(Composition Root).
 - 앱 생성·라우터 등록은 어댑터 계층에서만 수행. Application은 어댑터를 참조하지 않음.
 """
+
 import sys
 import os
 from pathlib import Path
@@ -23,12 +24,15 @@ if os.path.exists("/app") and "/app" not in sys.path:
 # 설정 (Application 계층 제공)
 try:
     from labzang.apps.ml.application.config import TitanicServiceConfig
+
     config = TitanicServiceConfig()
 except Exception:
+
     class Config:
         service_name = "mlservice"
         service_version = "1.0.0"
         port = 9010
+
     config = Config()
 
 LoggingMiddleware = None
@@ -36,17 +40,20 @@ try:
     from labzang.core.middleware import LoggingMiddleware
     from labzang.shared import setup_logging
 except ImportError:
+
     def setup_logging(name):
         import logging
+
         return logging.getLogger(name)
+
 
 logger = setup_logging(config.service_name)
 
-# 라우터는 adapter.input.api.v1 에서만 로드 (헥사고날 전용, 레거시 없음)
-from labzang.apps.ml.adapter.input.api.v1 import (
+# 라우터는 adapter.inbound.api.v1 에서만 로드 (헥사고날 전용, 레거시 없음)
+from labzang.apps.ml.adapter.inbound.api.v1 import (
     titanic_router,
     seoul_crime_router,
-    nlp_router,
+    wordcloud_router,
     us_unemployment_router,
 )
 
@@ -61,7 +68,9 @@ app = FastAPI(
     contact={"name": "ML Service Team", "email": "support@labzang.com"},
     license_info={"name": "MIT"},
     tags_metadata=[{"name": "titanic", "description": "타이타닉 승객 데이터 관련 API"}],
-    openapi_tags=[{"name": "titanic", "description": "타이타닉 데이터 및 머신러닝 예측 기능"}],
+    openapi_tags=[
+        {"name": "titanic", "description": "타이타닉 데이터 및 머신러닝 예측 기능"}
+    ],
 )
 
 app.add_middleware(
@@ -77,7 +86,7 @@ if LoggingMiddleware is not None:
 # 헥사고날 라우터만 등록 (레거시 제거, prefix는 각 라우터에 정의됨)
 app.include_router(titanic_router)
 app.include_router(seoul_crime_router, prefix="/seoul")
-app.include_router(nlp_router, prefix="/nlp")
+app.include_router(wordcloud_router, prefix="/wordcloud")
 app.include_router(us_unemployment_router, prefix="/usa")
 
 
@@ -103,6 +112,7 @@ async def shutdown_event():
 
 def run():
     import uvicorn
+
     uvicorn.run(app, host="0.0.0.0", port=config.port)
 
 

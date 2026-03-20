@@ -2,13 +2,14 @@
 서울 범죄 헥사고날 API (인바운드 어댑터)
 - 유스케이스는 조립 루트(dependencies)에서 주입받음. 출력 어댑터 직접 참조 없음.
 """
+
 from fastapi import APIRouter, Depends, HTTPException
 from fastapi.responses import JSONResponse
 
-from labzang.apps.ml.application.use_cases.seoul_crime_uc import (
-    PreprocessSeoulCrimeUseCase,
+from labzang.apps.ml.application.use_cases.geospatial.seoul_crime_uc import (
+    PreprocessSeoulCrimeUC,
 )
-from labzang.apps.ml.adapter.input.dependencies import (
+from labzang.apps.ml.adapter.inbound.dependencies import (
     get_preprocess_seoul_use_case,
 )
 from labzang.shared import create_response
@@ -33,7 +34,7 @@ async def seoul_hex_root() -> JSONResponse:
 
 @router.get("/preprocess")
 async def preprocess(
-    use_case: PreprocessSeoulCrimeUseCase = Depends(get_preprocess_seoul_use_case),
+    use_case: PreprocessSeoulCrimeUC = Depends(get_preprocess_seoul_use_case),
 ):
     """서울 범죄 전처리 실행 (데이터 로드, cctv-pop 머지, 지오코딩, 저장)."""
     try:

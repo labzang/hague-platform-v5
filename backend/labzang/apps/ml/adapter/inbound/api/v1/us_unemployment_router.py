@@ -7,7 +7,7 @@ from fastapi.responses import HTMLResponse
 from typing import Optional
 import logging
 
-from labzang.apps.ml.application.use_cases.us_unemployment_uc import (
+from labzang.apps.ml.application.use_cases.geospatial.us_unemployment_uc import (
     USUnemploymentService,
 )
 from labzang.shared import create_response

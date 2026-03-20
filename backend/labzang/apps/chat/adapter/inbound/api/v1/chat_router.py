@@ -141,6 +141,7 @@ async def rag_query(
             DocumentResp(
                 content=doc.page_content,
                 metadata=dict(doc.metadata),
+                score=(doc.metadata or {}).get("score"),
             )
             for doc in source_docs
         ]

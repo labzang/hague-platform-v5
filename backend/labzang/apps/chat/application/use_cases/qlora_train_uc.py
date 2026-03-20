@@ -1,12 +1,13 @@
 """
 QLoRA 학습 유스케이스 — QLoRAChatPort만 의존
 """
+
 from typing import Any
 
 from ..ports.output import QLoRAChatPort
 
 
-class QLoRATrainUseCase:
+class QLoRATrainUC:
     """QLoRA 포트를 사용한 SFT 학습 오케스트레이션."""
 
     def __init__(self, qlora_port: QLoRAChatPort):

@@ -1,8 +1,9 @@
 """설정에 따라 LLM 인스턴스를 생성하는 인바운드 팩토리."""
+
 from typing import Any, Optional
 
 from ....domain.value_objects import LlmConfig
-from ....application.use_cases import CreateLlmFromConfigUseCase
+from ....application.use_cases import CreateLlmFromConfigUC
 from ...outbound import ChatLLMAdapter, LLMType
 
 
@@ -22,7 +23,7 @@ def create_llm_from_config(settings: Any) -> Optional[LLMType]:
         local_model_dir=getattr(settings, "local_model_dir", None),
     )
     adapter = ChatLLMAdapter()
-    use_case = CreateLlmFromConfigUseCase(adapter)
+    use_case = CreateLlmFromConfigUC(adapter)
     return use_case.execute(config)
 
 

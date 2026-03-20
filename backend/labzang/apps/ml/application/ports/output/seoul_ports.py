@@ -2,32 +2,28 @@
 Outbound: 서울 범죄 데이터·전처리·지오코딩 포트
 - 구현: adapter/outbound/persistence/seoul_crime_repo
 """
+
 from abc import ABC, abstractmethod
 from typing import Any, List
 
 
-class SeoulDataPort(ABC):
+class SeoulCrimePort(ABC):
     """서울 범죄/인구/CCTV 데이터 로드 및 저장."""
 
     @abstractmethod
-    def get_data_dir(self) -> str:
-        ...
+    def get_data_dir(self) -> str: ...
 
     @abstractmethod
-    def get_save_dir(self) -> str:
-        ...
+    def get_save_dir(self) -> str: ...
 
     @abstractmethod
-    def load_cctv(self) -> Any:
-        ...
+    def load_cctv(self) -> Any: ...
 
     @abstractmethod
-    def load_crime(self) -> Any:
-        ...
+    def load_crime(self) -> Any: ...
 
     @abstractmethod
-    def load_pop(self) -> Any:
-        ...
+    def load_pop(self) -> Any: ...
 
     @abstractmethod
     def save_crime(self, crime_df: Any) -> str:
@@ -39,12 +35,10 @@ class SeoulPreprocessorPort(ABC):
     """서울 데이터 전처리(컬럼 정리, 머지 등). pandas는 Adapter에서만."""
 
     @abstractmethod
-    def csv_to_df(self, path: str) -> Any:
-        ...
+    def csv_to_df(self, path: str) -> Any: ...
 
     @abstractmethod
-    def xlsx_to_df(self, path: str) -> Any:
-        ...
+    def xlsx_to_df(self, path: str) -> Any: ...
 
     @abstractmethod
     def df_merge(
@@ -54,8 +48,7 @@ class SeoulPreprocessorPort(ABC):
         left_on: str,
         right_on: str,
         how: str = "inner",
-    ) -> Any:
-        ...
+    ) -> Any: ...
 
     @abstractmethod
     def drop_columns(self, df: Any, columns: List[str]) -> Any:
@@ -63,8 +56,7 @@ class SeoulPreprocessorPort(ABC):
         ...
 
     @abstractmethod
-    def drop_cctv_columns(self, cctv_df: Any, columns: List[str]) -> Any:
-        ...
+    def drop_cctv_columns(self, cctv_df: Any, columns: List[str]) -> Any: ...
 
     @abstractmethod
     def filter_pop_columns_and_rows(self, pop_df: Any) -> Any:

@@ -2,15 +2,16 @@
 타이타닉 헥사고날 API (인바운드 어댑터)
 - 유스케이스는 조립 루트(dependencies)에서 주입받음. 출력 어댑터 직접 참조 없음.
 """
+
 from fastapi import APIRouter, Depends, HTTPException, Request
 
 from labzang.apps.ml.adapter.inbound.api.schemas.titanic_req import (
     parse_jsonl_to_rows,
 )
 from labzang.apps.ml.application.use_cases import (
-    PreprocessTitanicUseCase,
-    EvaluateTitanicUseCase,
-    SubmitTitanicUseCase,
+    PreprocessTitanicUC,
+    EvaluateTitanicUC,
+    SubmitTitanicUC,
 )
 from labzang.apps.ml.adapter.inbound.dependencies import (
     get_preprocess_titanic_use_case,
@@ -76,7 +77,7 @@ async def titanic_hex_root():
 
 @router.get("/preprocess")
 async def preprocess(
-    use_case: PreprocessTitanicUseCase = Depends(get_preprocess_titanic_use_case),
+    use_case: PreprocessTitanicUC = Depends(get_preprocess_titanic_use_case),
 ):
     """전처리 실행 (유스케이스)."""
     try:
@@ -101,7 +102,7 @@ async def preprocess(
 
 @router.get("/evaluate")
 async def evaluate(
-    use_case: EvaluateTitanicUseCase = Depends(get_evaluate_titanic_use_case),
+    use_case: EvaluateTitanicUC = Depends(get_evaluate_titanic_use_case),
 ):
     """모델 평가 실행 (유스케이스)."""
     try:
@@ -121,7 +122,7 @@ async def evaluate(
 
 @router.get("/submit")
 async def submit(
-    use_case: SubmitTitanicUseCase = Depends(get_submit_titanic_use_case),
+    use_case: SubmitTitanicUC = Depends(get_submit_titanic_use_case),
 ):
     """제출 파일 생성 (유스케이스)."""
     try:

@@ -1,12 +1,13 @@
 """
 QLoRA 대화 생성 유스케이스 — QLoRAChatPort만 의존
 """
+
 from typing import Any, Dict, List, Optional
 
 from ..ports.output import QLoRAChatPort
 
 
-class QLoRAChatUseCase:
+class QLoRAChatUC:
     """QLoRA 포트를 사용한 대화 생성 오케스트레이션."""
 
     def __init__(self, qlora_port: QLoRAChatPort):

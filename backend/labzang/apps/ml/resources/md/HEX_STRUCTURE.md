@@ -27,7 +27,7 @@
 | `application/use_cases/` | **Use Case = Application Service**. Port를 호출해 흐름만 제어. |
 
 - `flow_manager`: CRUD vs AI 분리로 단순 DB 작업과 복합 AI 로직이 엉키지 않도록 보호.
-- `titanic_use_cases.py`: PreprocessTitanicUseCase, EvaluateTitanicUseCase, SubmitTitanicUseCase.
+- `titanic_use_cases.py`: PreprocessTitanicUC, EvaluateTitanicUC, SubmitTitanicUC.
 
 ---
 

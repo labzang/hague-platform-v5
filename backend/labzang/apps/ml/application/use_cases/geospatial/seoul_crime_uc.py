@@ -3,7 +3,7 @@
 """
 
 from labzang.apps.ml.application.ports import (
-    SeoulDataPort,
+    SeoulCrimePort,
     SeoulPreprocessorPort,
     GeocodePort,
 )
@@ -21,10 +21,10 @@ def _extract_gu(formatted_address: str) -> str:
     return ""
 
 
-class PreprocessSeoulCrimeUseCase:
+class PreprocessSeoulCrimeUC:
     def __init__(
         self,
-        data_port: SeoulDataPort,
+        data_port: SeoulCrimePort,
         preprocessor_port: SeoulPreprocessorPort,
         geocode_port: GeocodePort,
     ):
@@ -99,5 +99,5 @@ class PreprocessSeoulCrimeUseCase:
             crime_preview=self._preprocessor.head_to_dict(crime, 3),
             pop_preview=self._preprocessor.head_to_dict(pop, 3),
             cctv_pop_preview=self._preprocessor.head_to_dict(cctv_pop, 3),
-            message="데이터 전처리 및 머지가 완료되었습니다",
+            message=f"데이터 전처리 및 머지가 완료되었습니다. 저장 경로: {saved_path}",
         )

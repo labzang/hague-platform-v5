@@ -1,12 +1,13 @@
 """
 채팅 유스케이스 — ChatQueryInputPort 구현. QLoRAChatPort만 사용.
 """
+
 from ..DTOs import ChatRequestDto, ChatResponseDto
 from ..ports.input import ChatQueryInputPort
 from ..ports.output import QLoRAChatPort
 
 
-class ChatQueryUseCase(ChatQueryInputPort):
+class ChatQueryUC(ChatQueryInputPort):
     """단순 채팅 (검색 없이 메시지 → 답변)."""
 
     def __init__(self, chat_port: QLoRAChatPort):

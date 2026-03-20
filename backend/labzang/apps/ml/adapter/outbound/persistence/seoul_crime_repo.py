@@ -1,5 +1,5 @@
 """
-서울 범죄 아웃바운드 repo (SeoulDataPort, SeoulPreprocessorPort, GeocodePort 구현)
+서울 범죄 아웃바운드 repo (SeoulCrimePort, SeoulPreprocessorPort, GeocodePort 구현)
 """
 
 import io
@@ -8,10 +8,10 @@ import os
 from pathlib import Path
 from typing import Any, List
 
-import pandas as pd
+import pandas as pd  # type: ignore[import-untyped]
 
 from labzang.apps.ml.application.ports import (
-    SeoulDataPort,
+    SeoulCrimePort,
     SeoulPreprocessorPort,
     GeocodePort,
 )
@@ -19,8 +19,8 @@ from labzang.apps.ml.application.ports import (
 logger = logging.getLogger(__name__)
 
 
-# --- SeoulDataPort ---
-class SeoulDataAdapter(SeoulDataPort):
+# --- SeoulCrimePort ---
+class SeoulCrimeRepo(SeoulCrimePort):
     def __init__(self, data_dir: Path, save_dir: Path):
         self._data_dir = Path(data_dir)
         self._save_dir = Path(save_dir)

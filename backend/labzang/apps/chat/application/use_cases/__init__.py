@@ -1,18 +1,18 @@
-from .chat_query_uc import ChatQueryUseCase
-from .create_llm_uc import CreateLlmFromConfigUseCase
+from .chat_query_uc import ChatQueryUC
+from .create_llm_uc import CreateLlmFromConfigUC
 from .orchestrators import RAGOrchestrator
-from .qlora_chat_uc import QLoRAChatUseCase
-from .qlora_train_uc import QLoRATrainUseCase
-from .search_uc import SearchUseCase
+from .qlora_chat_uc import QLoRAChatUC
+from .qlora_train_uc import QLoRATrainUC
+from .search_uc import SearchUC
 from .spokes import GenerateAnswerSpoke, SearchSpoke
 
 __all__ = [
-    "ChatQueryUseCase",
-    "CreateLlmFromConfigUseCase",
+    "ChatQueryUC",
+    "CreateLlmFromConfigUC",
     "GenerateAnswerSpoke",
-    "QLoRAChatUseCase",
-    "QLoRATrainUseCase",
+    "QLoRAChatUC",
+    "QLoRATrainUC",
     "RAGOrchestrator",
     "SearchSpoke",
-    "SearchUseCase",
+    "SearchUC",
 ]

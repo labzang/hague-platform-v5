@@ -16,21 +16,21 @@ def run_titanic_analysis(
     model_port: Any,
 ) -> dict:
     """액션에 따라 타이타닉 전처리/평가/제출 중 하나 실행."""
-    from labzang.apps.ml.application.use_cases import (
-        PreprocessTitanicUseCase,
-        EvaluateTitanicUseCase,
-        SubmitTitanicUseCase,
+    from labzang.apps.ml.application.use_cases.kaggle.titanic_uc import (
+        PreprocessTitanicUC,
+        EvaluateTitanicUC,
+        SubmitTitanicUC,
     )
 
     if action == "preprocess":
-        uc = PreprocessTitanicUseCase(data_port, preprocessor_port)
+        uc = PreprocessTitanicUC(data_port, preprocessor_port)
         r = uc.execute()
         return {"status": r.status, "rows": r.rows, "columns": r.columns}
     if action == "evaluate":
-        uc = EvaluateTitanicUseCase(data_port, preprocessor_port, model_port)
+        uc = EvaluateTitanicUC(data_port, preprocessor_port, model_port)
         r = uc.execute()
         return {"best_model": r.best_model, "results": r.results}
     if action == "submit":
-        uc = SubmitTitanicUseCase(data_port, preprocessor_port, model_port)
+        uc = SubmitTitanicUC(data_port, preprocessor_port, model_port)
         return uc.execute()
     return {"error": f"unknown action: {action}"}

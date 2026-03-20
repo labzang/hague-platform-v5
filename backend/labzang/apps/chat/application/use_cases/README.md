@@ -9,11 +9,11 @@
 
 | 유스케이스 | 하는 일 | 의존하는 output 포트 |
 |-----------|--------|----------------------|
-| **CreateLlmFromConfigUseCase** | 설정(LlmConfig)으로 LLM 인스턴스 하나 생성 | ChatLLMPort |
-| **QLoRAChatUseCase** | 메시지 → QLoRA 포트로 답변 생성 (원시 파라미터) | QLoRAChatPort |
-| **QLoRATrainUseCase** | 데이터셋으로 QLoRA SFT 학습 실행 | QLoRAChatPort |
-| **ChatQueryUseCase** | ChatRequestDto → ChatResponseDto (단순 채팅, DTO 기반) | QLoRAChatPort |
-| **SearchUseCase** | SearchQueryDto → SearchResultDto (벡터 검색만) | (내부에서 SearchSpoke → VectorRepositoryPort) |
+| **CreateLlmFromConfigUC** | 설정(LlmConfig)으로 LLM 인스턴스 하나 생성 | ChatLLMPort |
+| **QLoRAChatUC** | 메시지 → QLoRA 포트로 답변 생성 (원시 파라미터) | QLoRAChatPort |
+| **QLoRATrainUC** | 데이터셋으로 QLoRA SFT 학습 실행 | QLoRAChatPort |
+| **ChatQueryUC** | ChatRequestDto → ChatResponseDto (단순 채팅, DTO 기반) | QLoRAChatPort |
+| **SearchUC** | SearchQueryDto → SearchResultDto (벡터 검색만) | (내부에서 SearchSpoke → VectorRepositoryPort) |
 | **RAGOrchestrator** (hub) | RAGQueryDto → RAGResultDto (검색 + 컨텍스트 + 답변 생성) | SearchSpoke, GenerateAnswerSpoke → VectorRepositoryPort, QLoRAChatPort |
 
 ---
@@ -24,14 +24,14 @@
 
 | 유스케이스 | 현재 호출 위치 | 비고 |
 |-----------|----------------|------|
-| **CreateLlmFromConfigUseCase** | `adapter/inbound/factory.py` → `create_llm_from_config()` | ✅ 앱 기동 시 LLM 생성에 사용 중 |
-| **QLoRAChatUseCase** | (없음) | API에서 직접 QLoRA 쓰는 곳에서 이 유스케이스로 대체 가능 |
-| **QLoRATrainUseCase** | (없음) | 학습 API/CLI 진입점에서 주입해 호출하면 됨 |
-| **ChatQueryUseCase** | (없음) | POST /chat 같은 단순 채팅 엔드포인트에서 주입해 호출 |
-| **SearchUseCase** | (없음) | `search_router`에서 벡터스토어 직접 호출 대신 이 유스케이스 호출로 연결 가능 |
+| **CreateLlmFromConfigUC** | `adapter/inbound/factory.py` → `create_llm_from_config()` | ✅ 앱 기동 시 LLM 생성에 사용 중 |
+| **QLoRAChatUC** | (없음) | API에서 직접 QLoRA 쓰는 곳에서 이 유스케이스로 대체 가능 |
+| **QLoRATrainUC** | (없음) | 학습 API/CLI 진입점에서 주입해 호출하면 됨 |
+| **ChatQueryUC** | (없음) | POST /chat 같은 단순 채팅 엔드포인트에서 주입해 호출 |
+| **SearchUC** | (없음) | `search_router`에서 벡터스토어 직접 호출 대신 이 유스케이스 호출로 연결 가능 |
 | **RAGOrchestrator** | (없음) | `chat_router`의 RAG 플로우를 이 오케스트레이터 호출로 교체 가능 |
 
-정리하면, **지금 실제로 쓰이는 건 CreateLlmFromConfigUseCase 하나**이고,  
+정리하면, **지금 실제로 쓰이는 건 CreateLlmFromConfigUC 하나**이고,  
 나머지는 “인바운드에서 유스케이스를 주입하고 호출하도록” 연결만 하면 된다.
 
 ---

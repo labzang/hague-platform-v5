@@ -5,16 +5,24 @@ from .persistence.titanic_repo import (
     SklearnTitanicModelAdapter,
 )
 from .persistence.seoul_crime_repo import (
-    SeoulDataAdapter,
+    SeoulCrimeRepo,
     SeoulPreprocessorAdapter,
     KakaoGeocodeAdapter,
+)
+from .file_adapters import (
+    FileTextSourceAdapter,
+    FileImageStorageAdapter,
+    GutenbergTextSourceAdapter,
 )
 
 __all__ = [
     "CsvTitanicDataAdapter",
     "TitanicPreprocessorAdapter",
     "SklearnTitanicModelAdapter",
-    "SeoulDataAdapter",
+    "SeoulCrimeRepo",
     "SeoulPreprocessorAdapter",
     "KakaoGeocodeAdapter",
+    "FileTextSourceAdapter",
+    "FileImageStorageAdapter",
+    "GutenbergTextSourceAdapter",
 ]
