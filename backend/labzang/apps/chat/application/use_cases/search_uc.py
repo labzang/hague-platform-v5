@@ -2,9 +2,9 @@
 검색 유스케이스 — SearchInputPort 구현. SearchSpoke 위임.
 """
 
-from ..DTOs import SearchQueryDto, SearchResultDto
-from ..ports.input import SearchInputPort
-from .spokes import SearchSpoke
+from labzang.apps.chat.application.dtos import SearchQueryDto, SearchResultDto
+from labzang.apps.chat.application.ports.input import SearchInputPort
+from labzang.apps.chat.application.use_cases.spokes import SearchSpoke
 
 
 class SearchUC(SearchInputPort):

@@ -24,10 +24,10 @@ from labzang.core.paths import (
     CHAT_ROOT,
     SHARED_ROOT,
 )
-from .middleware import LoggingMiddleware, CORSMiddleware
-from . import database
-from . import llm
-from . import rag
+from labzang.core.middleware import LoggingMiddleware, CORSMiddleware
+from labzang.core import database
+from labzang.core import llm
+from labzang.core import rag
 
 __all__ = [
     "BaseServiceConfig",

@@ -4,8 +4,8 @@ LLM 생성 유스케이스 (포트만 의존)
 
 from typing import Any, Optional
 
-from ...domain.value_objects import LlmConfig
-from ..ports.output import ChatLLMPort
+from labzang.apps.chat.domain.value_objects import LlmConfig
+from labzang.apps.chat.application.ports.output import ChatLLMPort
 
 
 class CreateLlmFromConfigUC:

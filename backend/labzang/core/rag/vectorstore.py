@@ -7,7 +7,7 @@ from langchain_core.embeddings import Embeddings
 from langchain_openai import OpenAIEmbeddings
 from langchain_community.vectorstores import PGVector
 
-from .settings import openai_api_key, database_url
+from labzang.core.rag.settings import openai_api_key, database_url
 
 
 class SimpleEmbeddings(Embeddings):

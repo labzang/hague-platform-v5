@@ -1,7 +1,7 @@
 """로컬 Hugging Face 한국어 LLM provider."""
 from pathlib import Path
 
-from ..llm_types import LLMType
+from labzang.apps.chat.adapter.outbound.llm.llm_types import LLMType
 
 
 def create_local_korean_llm(model_dir: str | Path) -> LLMType:

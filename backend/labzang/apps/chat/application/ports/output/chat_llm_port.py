@@ -4,7 +4,7 @@
 from abc import ABC, abstractmethod
 from typing import Any, Optional
 
-from ....domain.value_objects import LlmConfig
+from labzang.apps.chat.domain.value_objects import LlmConfig
 
 
 class ChatLLMPort(ABC):

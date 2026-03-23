@@ -4,7 +4,7 @@
 """
 from abc import ABC, abstractmethod
 
-from ...DTOs import RAGQueryDto, RAGResultDto
+from labzang.apps.chat.application.dtos import RAGQueryDto, RAGResultDto
 
 
 class RAGQueryInputPort(ABC):

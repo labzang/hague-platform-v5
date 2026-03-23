@@ -3,7 +3,7 @@ from typing import Any, Dict, List, Optional
 
 from pydantic import Field
 
-from .base_dto import BaseDto
+from labzang.apps.chat.application.dtos.base_dto import BaseDto
 
 
 

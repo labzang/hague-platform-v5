@@ -1,5 +1,5 @@
 """RAG·벡터스토어 (PGVector, 체인)."""
-from .vectorstore import (
+from labzang.core.rag.vectorstore import (
     get_embeddings,
     get_connection_string,
     get_vectorstore,
@@ -8,7 +8,7 @@ from .vectorstore import (
     VectorStoreType,
     SimpleEmbeddings,
 )
-from .chain import create_rag_chain
+from labzang.core.rag.chain import create_rag_chain
 
 __all__ = [
     "get_embeddings",

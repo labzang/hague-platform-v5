@@ -9,7 +9,7 @@ from typing import Dict, Any, List, Optional
 from pydantic import BaseModel, Field
 import logging
 
-from .koelectra_service import get_sentiment_service
+from labzang.apps.transformer.application.koelectra.koelectra_service import get_sentiment_service
 import asyncio
 import subprocess
 import sys

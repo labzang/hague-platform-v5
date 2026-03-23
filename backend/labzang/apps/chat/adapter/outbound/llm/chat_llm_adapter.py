@@ -3,11 +3,11 @@ ChatLLMPort 구현: 설정에 따라 OpenAI / Midm / Korean Local LLM 생성
 """
 from typing import Any, Optional
 
-from ....application.ports.output import ChatLLMPort
-from ....domain.value_objects import LlmConfig
-from .providers.openai import create_openai_chat_llm
-from .providers.korean_hf_local import create_local_korean_llm
-from .providers.midm_local import create_midm_local_llm
+from labzang.apps.chat.application.ports.output import ChatLLMPort
+from labzang.apps.chat.domain.value_objects import LlmConfig
+from labzang.apps.chat.adapter.outbound.llm.providers.openai import create_openai_chat_llm
+from labzang.apps.chat.adapter.outbound.llm.providers.korean_hf_local import create_local_korean_llm
+from labzang.apps.chat.adapter.outbound.llm.providers.midm_local import create_midm_local_llm
 
 
 class ChatLLMAdapter(ChatLLMPort):

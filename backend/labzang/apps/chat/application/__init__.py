@@ -1,5 +1,5 @@
 # Chat Application — 계약(ports, DTOs) + 유스케이스(use_cases: orchestrators, spokes)
-from .DTOs import (
+from labzang.apps.chat.application.dtos import (
     BaseDto,
     ChatMessageDto,
     ChatRequestDto,
@@ -10,7 +10,7 @@ from .DTOs import (
     SearchQueryDto,
     SearchResultDto,
 )
-from .ports import (
+from labzang.apps.chat.application.ports import (
     ChatQueryInputPort,
     ChatLLMPort,
     RAGQueryInputPort,
@@ -18,7 +18,7 @@ from .ports import (
     QLoRAChatPort,
     VectorRepositoryPort,
 )
-from .use_cases import (
+from labzang.apps.chat.application.use_cases import (
     ChatQueryUC,
     CreateLlmFromConfigUC,
     GenerateAnswerSpoke,

@@ -2,9 +2,9 @@
 
 from typing import Any, Optional
 
-from ....domain.value_objects import LlmConfig
-from ....application.use_cases import CreateLlmFromConfigUC
-from ...outbound import ChatLLMAdapter, LLMType
+from labzang.apps.chat.domain.value_objects import LlmConfig
+from labzang.apps.chat.application.use_cases import CreateLlmFromConfigUC
+from labzang.apps.chat.adapter.outbound import ChatLLMAdapter, LLMType
 
 
 def create_llm_from_config(settings: Any) -> Optional[LLMType]:

@@ -2,7 +2,7 @@
 from pathlib import Path
 from typing import Optional
 
-from ..llm_types import LLMType
+from labzang.apps.chat.adapter.outbound.llm.llm_types import LLMType
 
 
 def create_midm_local_llm(model_dir: Optional[str] = None) -> LLMType:

@@ -1,9 +1,14 @@
 """
 RAG 오케스트레이터 — 검색 스포크 + 답변 생성 스포크를 조합해 RAGQueryInputPort 구현.
 """
-from ....DTOs import ChatRequestDto, RAGQueryDto, RAGResultDto, SearchQueryDto
-from ....ports.input import RAGQueryInputPort
-from ...spokes import GenerateAnswerSpoke, SearchSpoke
+from labzang.apps.chat.application.dtos import (
+    ChatRequestDto,
+    RAGQueryDto,
+    RAGResultDto,
+    SearchQueryDto,
+)
+from labzang.apps.chat.application.ports.input import RAGQueryInputPort
+from labzang.apps.chat.application.use_cases.spokes import GenerateAnswerSpoke, SearchSpoke
 
 
 class RAGOrchestrator(RAGQueryInputPort):

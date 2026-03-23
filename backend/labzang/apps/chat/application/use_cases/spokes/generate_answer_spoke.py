@@ -1,8 +1,8 @@
 """
 스포크: 답변 생성 — QLoRAChatPort만 사용.
 """
-from ...DTOs import ChatRequestDto, ChatResponseDto
-from ...ports.output import QLoRAChatPort
+from labzang.apps.chat.application.dtos import ChatRequestDto, ChatResponseDto
+from labzang.apps.chat.application.ports.output import QLoRAChatPort
 
 
 class GenerateAnswerSpoke:

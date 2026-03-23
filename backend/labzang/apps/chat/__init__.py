@@ -6,7 +6,7 @@
 - adapter/outbound: ChatLLMAdapter, LLMType, persistence, qlora
 """
 
-from .adapter.outbound import LLMType
-from .adapter.inbound import create_llm_from_config
+from labzang.apps.chat.adapter.outbound import LLMType
+from labzang.apps.chat.adapter.inbound import create_llm_from_config
 
 __all__ = ["LLMType", "create_llm_from_config"]

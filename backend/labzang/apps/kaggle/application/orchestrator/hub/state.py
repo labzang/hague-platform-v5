@@ -1,0 +1,1 @@
+# LangGraph State 정의 (TypedDict)

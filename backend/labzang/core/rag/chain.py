@@ -8,7 +8,7 @@ from langchain_core.output_parsers import StrOutputParser
 from langchain_core.language_models.base import BaseLanguageModel
 from langchain_openai import ChatOpenAI
 
-from .settings import openai_api_key
+from labzang.core.rag.settings import openai_api_key
 
 
 def create_rag_chain(

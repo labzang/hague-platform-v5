@@ -1,26 +1,48 @@
 """
-벅스 차트 한 행에 해당하는 값 객체.
-- JSON 직렬화 및 테이블(행) 표현용.
+벅스 차트 도메인 값 객체 (순수: 외부 라이브러리 미참조)
+- 차트 한 행 컬럼 기준: rank, artist, title
+- 도메인 의미·검증이 있는 값만 VO로 정의.
 """
-from dataclasses import dataclass, asdict
-from typing import Any, Dict
+from dataclasses import dataclass
 
 
 @dataclass(frozen=True)
-class BugsmusicChartRow:
-    """벅스 차트 한 건: 순위, 아티스트, 제목."""
+class ChartRank:
+    """차트 순위. 1 이상 (상한은 서비스 정책)."""
 
-    rank: int
-    artist: str
-    title: str
+    value: int
 
-    def to_dict(self) -> Dict[str, Any]:
-        """JSON 저장용 딕셔너리."""
-        return asdict(self)
-
-    def to_table_row(self) -> list:
-        """테이블(CSV 등) 저장용 리스트 [순위, 아티스트, 제목]."""
-        return [self.rank, self.artist, self.title]
+    def __post_init__(self) -> None:
+        if self.value < 1:
+            raise ValueError("ChartRank must be >= 1")
+        if self.value > 500:
+            raise ValueError("ChartRank must be <= 500")
 
 
-__all__ = ["BugsmusicChartRow"]
+@dataclass(frozen=True)
+class ArtistName:
+    """아티스트명. 비어 있지 않은 문자열."""
+
+    value: str
+
+    def __post_init__(self) -> None:
+        v = (self.value or "").strip()
+        if not v:
+            raise ValueError("ArtistName must be non-empty")
+        object.__setattr__(self, "value", v)
+
+
+@dataclass(frozen=True)
+class SongTitle:
+    """곡 제목. 비어 있지 않은 문자열."""
+
+    value: str
+
+    def __post_init__(self) -> None:
+        v = (self.value or "").strip()
+        if not v:
+            raise ValueError("SongTitle must be non-empty")
+        object.__setattr__(self, "value", v)
+
+
+__all__ = ["ArtistName", "ChartRank", "SongTitle"]

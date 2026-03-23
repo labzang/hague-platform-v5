@@ -4,7 +4,7 @@ QLoRA 대화 생성 유스케이스 — QLoRAChatPort만 의존
 
 from typing import Any, Dict, List, Optional
 
-from ..ports.output import QLoRAChatPort
+from labzang.apps.chat.application.ports.output import QLoRAChatPort
 
 
 class QLoRAChatUC:

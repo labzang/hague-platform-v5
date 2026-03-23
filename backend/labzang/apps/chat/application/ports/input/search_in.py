@@ -4,7 +4,7 @@
 """
 from abc import ABC, abstractmethod
 
-from ...DTOs import SearchQueryDto, SearchResultDto
+from labzang.apps.chat.application.dtos import SearchQueryDto, SearchResultDto
 
 
 class SearchInputPort(ABC):

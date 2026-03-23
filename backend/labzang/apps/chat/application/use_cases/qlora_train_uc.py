@@ -4,7 +4,7 @@ QLoRA 학습 유스케이스 — QLoRAChatPort만 의존
 
 from typing import Any
 
-from ..ports.output import QLoRAChatPort
+from labzang.apps.chat.application.ports.output import QLoRAChatPort
 
 
 class QLoRATrainUC:

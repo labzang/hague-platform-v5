@@ -1,8 +1,8 @@
 """
 스포크: 벡터 검색 — VectorRepositoryPort만 사용.
 """
-from ...DTOs import DocumentDto, SearchQueryDto, SearchResultDto
-from ...ports.output import VectorRepositoryPort
+from labzang.apps.chat.application.dtos import DocumentDto, SearchQueryDto, SearchResultDto
+from labzang.apps.chat.application.ports.output import VectorRepositoryPort
 
 
 class SearchSpoke:

@@ -2,9 +2,9 @@
 채팅 유스케이스 — ChatQueryInputPort 구현. QLoRAChatPort만 사용.
 """
 
-from ..DTOs import ChatRequestDto, ChatResponseDto
-from ..ports.input import ChatQueryInputPort
-from ..ports.output import QLoRAChatPort
+from labzang.apps.chat.application.dtos import ChatRequestDto, ChatResponseDto
+from labzang.apps.chat.application.ports.input import ChatQueryInputPort
+from labzang.apps.chat.application.ports.output import QLoRAChatPort
 
 
 class ChatQueryUC(ChatQueryInputPort):

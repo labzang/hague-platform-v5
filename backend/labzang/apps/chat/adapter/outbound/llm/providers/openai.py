@@ -3,7 +3,7 @@ from typing import Any
 
 from langchain_openai import ChatOpenAI
 
-from ..llm_types import LLMType
+from labzang.apps.chat.adapter.outbound.llm.llm_types import LLMType
 
 
 def create_openai_chat_llm(

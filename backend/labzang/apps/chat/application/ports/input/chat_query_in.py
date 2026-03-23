@@ -4,7 +4,7 @@
 """
 from abc import ABC, abstractmethod
 
-from ...DTOs import ChatRequestDto, ChatResponseDto
+from labzang.apps.chat.application.dtos import ChatRequestDto, ChatResponseDto
 
 
 class ChatQueryInputPort(ABC):
