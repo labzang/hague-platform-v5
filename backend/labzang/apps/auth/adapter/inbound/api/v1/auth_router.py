@@ -2,7 +2,7 @@
 인증 관련 라우터
 """
 from fastapi import APIRouter
-from labzang.shared.common.utils import create_response
+from labzang.shared import create_response
 
 router = APIRouter(prefix="/auth", tags=["auth"])
 

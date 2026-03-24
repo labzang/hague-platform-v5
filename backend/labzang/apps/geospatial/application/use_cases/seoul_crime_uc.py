@@ -2,12 +2,12 @@
 서울 범죄 유스케이스 (포트만 의존, 비즈니스 오케스트레이션)
 """
 
-from labzang.apps.ml.application.ports import (
+from labzang.apps.geospatial.application.ports import (
     SeoulCrimePort,
     SeoulPreprocessorPort,
     GeocodePort,
 )
-from labzang.apps.ml.domain.value_objects import SeoulPreprocessResult
+from labzang.apps.geospatial.domain.value_objects.seoul_crime_vo import SeoulPreprocessResult
 
 
 def _extract_gu(formatted_address: str) -> str:

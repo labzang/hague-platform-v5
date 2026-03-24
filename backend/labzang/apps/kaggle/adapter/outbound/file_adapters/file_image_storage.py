@@ -4,7 +4,7 @@
 from pathlib import Path
 from typing import Any, Dict
 
-from labzang.apps.ml.application.ports.output import ImageStoragePort
+from labzang.apps.wordcloud.application.ports.output.wordcloud_ports import ImageStoragePort
 
 
 class FileImageStorageAdapter(ImageStoragePort):

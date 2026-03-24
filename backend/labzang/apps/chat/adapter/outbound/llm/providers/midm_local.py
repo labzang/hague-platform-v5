@@ -19,13 +19,9 @@ def create_midm_local_llm(model_dir: Optional[str] = None) -> LLMType:
 
     model_path: Path
     if model_dir is None:
-        try:
-            from labzang.core.paths import CHAT_ROOT
-            model_path = (CHAT_ROOT / "model" / "midm").resolve()
-        except ImportError:
-            model_path = (
-                Path(__file__).resolve().parent.parent.parent.parent / "model" / "midm"
-            )
+        from labzang.core.paths import CHAT_ROOT
+
+        model_path = (CHAT_ROOT / "model" / "midm").resolve()
     else:
         model_path = Path(model_dir).resolve()
 

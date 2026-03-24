@@ -10,7 +10,7 @@ from typing import Any, List
 
 import pandas as pd  # type: ignore[import-untyped]
 
-from labzang.apps.ml.application.ports import (
+from labzang.apps.geospatial.application.ports import (
     SeoulCrimePort,
     SeoulPreprocessorPort,
     GeocodePort,

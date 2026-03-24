@@ -2,7 +2,7 @@
 
 from fastapi import APIRouter, Depends, HTTPException
 
-from labzang.apps.chat.adapter.input.api.v1.schemas import (
+from labzang.apps.chat.adapter.inbound.api.schemas import (
     DocumentResp,
     SearchRequest,
     SearchResp,

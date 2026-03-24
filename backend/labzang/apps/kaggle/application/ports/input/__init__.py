@@ -1,8 +1,15 @@
 """
-인바운드 포트 (Application 계층) — 진입점/유스케이스 계약.
-- 인바운드 어댑터(HTTP, CLI)가 호출하는 인터페이스 정의 시 사용.
-- 필요 시 Use Case 단위 입력/출력 계약 추가.
+Inbound ports (application layer) for entrypoint/use-case contracts.
 """
-# 현재는 유스케이스 클래스가 직접 진입점 역할. 필요 시 입력 포트 인터페이스 추가.
 
-__all__: list[str] = []
+from labzang.apps.kaggle.application.ports.input.titanic_uc import (
+    EvaluateTitanicUCPort,
+    PreprocessTitanicUCPort,
+    SubmitTitanicUCPort,
+)
+
+__all__ = [
+    "PreprocessTitanicUCPort",
+    "EvaluateTitanicUCPort",
+    "SubmitTitanicUCPort",
+]

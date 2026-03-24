@@ -1,8 +1,10 @@
+﻿"""
+Crawler 서비스 레거시 진입점.
+통합 이후에는 루트 모놀리식 앱을 재노출한다.
 """
-Crawler 서비스 진입점 (백워드 호환).
-- 앱 생성·조립은 adapter/input/app.py에서 수행. 여기서는 재노출만.
-"""
-from labzang.apps.crawler.adapter.input.app import app, config, run
+from labzang.bootstrap.entrypoint import app, config, run
+
+__all__ = ["app", "config", "run"]
 
 if __name__ == "__main__":
     run()

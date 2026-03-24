@@ -5,19 +5,19 @@
 
 from fastapi import APIRouter, Depends, HTTPException, Request
 
-from labzang.apps.ml.adapter.inbound.api.schemas.titanic_req import (
+from labzang.apps.kaggle.adapter.inbound.api.schemas.titanic_req import (
     parse_jsonl_to_rows,
 )
-from labzang.apps.ml.application.dtos.titanic_dto import EvaluationResult
-from labzang.apps.ml.application.use_cases import (
-    PreprocessTitanicUC,
-    EvaluateTitanicUC,
-    SubmitTitanicUC,
-)
-from labzang.apps.ml.adapter.inbound.dependencies import (
-    get_preprocess_titanic_use_case,
+from labzang.apps.kaggle.adapter.inbound.dependencies import (
     get_evaluate_titanic_use_case,
+    get_preprocess_titanic_use_case,
     get_submit_titanic_use_case,
+)
+from labzang.apps.kaggle.application.dtos.titanic_dto import EvaluationResult
+from labzang.apps.kaggle.application.use_cases import (
+    EvaluateTitanicUC,
+    PreprocessTitanicUC,
+    SubmitTitanicUC,
 )
 from labzang.shared import create_response
 

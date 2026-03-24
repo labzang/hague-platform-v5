@@ -4,7 +4,7 @@
 """
 from pathlib import Path
 
-from labzang.apps.ml.application.ports.output import TextSourcePort
+from labzang.apps.wordcloud.application.ports.output.wordcloud_ports import TextSourcePort
 
 # use case와 약속한 키
 KEY_SAMSUNG_REPORT = "samsung_report"

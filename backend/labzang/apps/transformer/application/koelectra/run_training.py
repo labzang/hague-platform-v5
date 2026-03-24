@@ -5,13 +5,13 @@ Docker 컨테이너 내에서 훈련을 실행하기 위한 래퍼 스크립트
 
 import sys
 import os
-from pathlib import Path
 import logging
 
+from labzang.core.paths import LABZANG_ROOT
+
 # 절대경로: labzang 루트를 Python 경로에 추가
-_labzang_root = Path(__file__).resolve().parent.parent.parent.parent.parent
-if str(_labzang_root) not in sys.path:
-    sys.path.insert(0, str(_labzang_root))
+if str(LABZANG_ROOT) not in sys.path:
+    sys.path.insert(0, str(LABZANG_ROOT))
 if os.path.exists("/app") and "/app" not in sys.path:
     sys.path.insert(0, "/app")
 

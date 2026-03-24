@@ -5,16 +5,14 @@ Kaggle(Titanic) 서비스 FastAPI 앱 조립(Composition Root).
 
 import sys
 import os
-from pathlib import Path
 
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
+from labzang.core.paths import BACKEND_ROOT, LABZANG_ROOT, LEARNING_ROOT
+
 # 절대경로 (진입점 호환)
-_labzang_root = Path(__file__).resolve().parent.parent.parent.parent
-_learning_root = _labzang_root / "apps" / "learning"
-_backend_root = _labzang_root.parent
-for _p in (_backend_root, _labzang_root, _learning_root):
+for _p in (BACKEND_ROOT, LABZANG_ROOT, LEARNING_ROOT):
     _s = str(_p)
     if _s not in sys.path:
         sys.path.insert(0, _s)
@@ -23,7 +21,7 @@ if os.path.exists("/app") and "/app" not in sys.path:
 
 # 설정 (Application 계층 제공)
 try:
-    from labzang.apps.ml.application.config import TitanicServiceConfig
+    from labzang.apps.kaggle.application.config import TitanicServiceConfig
 
     config = TitanicServiceConfig()
 except Exception:
@@ -50,7 +48,7 @@ except ImportError:
 logger = setup_logging(config.service_name)
 
 # 라우터는 adapter.inbound.api.v1 에서만 로드 (헥사고날 전용, 레거시 없음)
-from labzang.apps.ml.adapter.inbound.api.v1 import (
+from labzang.apps.kaggle.adapter.inbound.api.v1 import (  # noqa: E402
     titanic_router,
     seoul_crime_router,
     wordcloud_router,

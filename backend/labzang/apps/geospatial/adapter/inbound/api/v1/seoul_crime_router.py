@@ -6,10 +6,10 @@
 from fastapi import APIRouter, Depends, HTTPException
 from fastapi.responses import JSONResponse
 
-from labzang.apps.ml.application.use_cases.geospatial.seoul_crime_uc import (
+from labzang.apps.geospatial.application.use_cases.seoul_crime_uc import (
     PreprocessSeoulCrimeUC,
 )
-from labzang.apps.ml.adapter.inbound.dependencies import (
+from labzang.apps.kaggle.adapter.inbound.dependencies import (
     get_preprocess_seoul_use_case,
 )
 from labzang.shared import create_response

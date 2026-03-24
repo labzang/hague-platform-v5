@@ -7,13 +7,13 @@ from fastapi.responses import HTMLResponse
 from typing import Optional
 import logging
 
-from labzang.apps.ml.application.use_cases.geospatial.us_unemployment_uc import (
+from labzang.apps.geospatial.application.use_cases.us_unemployment_uc import (
     USUnemploymentService,
 )
 from labzang.shared import create_response
-from labzang.apps.ml.application.common.font_utils import (
-    test_korean_font,
+from labzang.shared.common.font_utils import (
     get_available_korean_fonts,
+    test_korean_font,
 )
 
 logger = logging.getLogger(__name__)

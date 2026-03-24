@@ -270,15 +270,15 @@ async def get_examples():
             "볼만은 하지만 특별하지는 않았어요."
         ]
     }
-    
-        return JSONResponse(
-            status_code=200,
-            content={
-                "success": True,
-                "data": examples,
-                "message": "감성분석 예제 텍스트를 제공합니다"
-            }
-        )
+
+    return JSONResponse(
+        status_code=200,
+        content={
+            "success": True,
+            "data": examples,
+            "message": "감성분석 예제 텍스트를 제공합니다"
+        }
+    )
 
 @router.post("/train")
 async def train_model():

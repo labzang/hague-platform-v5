@@ -1,18 +1,18 @@
 # 아웃바운드 어댑터 (Application 포트 구현)
-from labzang.apps.ml.adapter.outbound.persistence.titanic_repo import (
-    CsvTitanicDataAdapter,
-    TitanicPreprocessorAdapter,
-    SklearnTitanicModelAdapter,
-)
-from labzang.apps.ml.adapter.outbound.persistence.seoul_crime_repo import (
+from labzang.apps.geospatial.adapter.outbound.persistence.seoul_crime_repo import (
+    KakaoGeocodeAdapter,
     SeoulCrimeRepo,
     SeoulPreprocessorAdapter,
-    KakaoGeocodeAdapter,
 )
-from labzang.apps.ml.adapter.outbound.file_adapters import (
-    FileTextSourceAdapter,
+from labzang.apps.kaggle.adapter.outbound.file_adapters import (
     FileImageStorageAdapter,
+    FileTextSourceAdapter,
     GutenbergTextSourceAdapter,
+)
+from labzang.apps.kaggle.adapter.outbound.repositories.titanic_repo import (
+    CsvTitanicDataAdapter,
+    SklearnTitanicModelAdapter,
+    TitanicPreprocessorAdapter,
 )
 
 __all__ = [

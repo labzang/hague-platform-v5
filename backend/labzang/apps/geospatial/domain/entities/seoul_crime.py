@@ -7,7 +7,7 @@
 from dataclasses import dataclass
 from typing import Optional
 
-from labzang.apps.ml.domain.value_objects.geospatial.seoul_crime_vo import (
+from labzang.apps.geospatial.domain.value_objects.seoul_crime_vo import (
     MurderArrested,
     MurderOccurred,
     PoliceStationName,

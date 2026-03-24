@@ -4,8 +4,7 @@ Application 포트 — 헥사고날 인바운드/아웃바운드 계약.
 - output: Application이 의존하는 계약 (구현: adapter/outbound)
 """
 
-from labzang.apps.ml.application.ports.output import (
-    RepositoryPort,
+from labzang.apps.kaggle.application.ports.output import (
     VectorDbPort,
     LlmPort,
     SeoulCrimePort,
@@ -19,7 +18,6 @@ from labzang.apps.ml.application.ports.output import (
 )
 
 __all__ = [
-    "RepositoryPort",
     "VectorDbPort",
     "LlmPort",
     "SeoulCrimePort",

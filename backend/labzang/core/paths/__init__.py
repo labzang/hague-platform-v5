@@ -8,6 +8,9 @@ from pathlib import Path
 _LABZANG_ROOT: Path = Path(__file__).resolve().parent.parent.parent
 LABZANG_ROOT: Path = _LABZANG_ROOT.resolve()
 
+# backend 루트 (main.py, artifacts/ 등)
+BACKEND_ROOT: Path = LABZANG_ROOT.parent.resolve()
+
 # 앱 루트들 (절대경로)
 APPS_ROOT: Path = LABZANG_ROOT / "apps"
 LEARNING_ROOT: Path = APPS_ROOT / "learning"
@@ -21,6 +24,7 @@ SHARED_ROOT: Path = LABZANG_ROOT / "shared"
 
 __all__ = [
     "LABZANG_ROOT",
+    "BACKEND_ROOT",
     "APPS_ROOT",
     "LEARNING_ROOT",
     "ML_ROOT",

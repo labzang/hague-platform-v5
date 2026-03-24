@@ -1,14 +1,15 @@
 """
 타이타닉 유스케이스/어댑터용 DTO — TitanicTrain ORM 컬럼 기준.
-- 행 단위: TitanicRowDto (ORM/API 전달용)
-- 데이터셋·전처리·평가: TitanicDatasetDto, PreprocessResult, EvaluationResult
+- 행 단위: TitanicRowDTO (ORM/API 전달용)
+- 데이터셋·전처리·평가: TitanicDatasetDTO, PreprocessResult, EvaluationResult
 """
+
 from dataclasses import dataclass
 from typing import Any, Dict, List, Optional
 
 
 @dataclass
-class TitanicRowDto:
+class TitanicRowDTO:
     """타이타닉 한 행 전달용 DTO. ORM TitanicTrain 컬럼과 1:1 대응 (원시 타입)."""
 
     passenger_id: int
@@ -26,7 +27,7 @@ class TitanicRowDto:
 
 
 @dataclass
-class TitanicDatasetDto:
+class TitanicDatasetDTO:
     """전처리된 train/test 담기 + 메타(경로·레이블 컬럼). 어댑터/포트 간 전달용."""
 
     train: Any = None

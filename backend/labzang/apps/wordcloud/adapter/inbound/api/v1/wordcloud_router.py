@@ -6,19 +6,17 @@ from fastapi import APIRouter, Depends, HTTPException, Query
 from typing import Dict, Any, Optional
 import logging
 
-from labzang.apps.ml.application.use_cases.wordcloud.samsung_wordcloud_uc import (
-    GenerateSamsungWordcloudUC,
-)
-from labzang.apps.ml.application.use_cases.wordcloud.emma_wordcloud_uc import (
-    GenerateEmmaWordcloudUC,
-)
-from labzang.apps.ml.adapter.inbound.dependencies import (
-    get_samsung_wordcloud_use_case,
+from labzang.apps.kaggle.adapter.inbound.dependencies import (
     get_emma_wordcloud_use_case,
+    get_samsung_wordcloud_use_case,
     get_wordcloud_resp_dep,
 )
-from labzang.apps.ml.application.use_cases.wordcloud.emma_wordcloud import (  # type: ignore[import-untyped]
-    NLTKService,
+from labzang.apps.wordcloud.application.use_cases.emma_wordcloud import NLTKService
+from labzang.apps.wordcloud.application.use_cases.emma_wordcloud_uc import (
+    GenerateEmmaWordcloudUC,
+)
+from labzang.apps.wordcloud.application.use_cases.samsung_wordcloud_uc import (
+    GenerateSamsungWordcloudUC,
 )
 
 logger = logging.getLogger(__name__)

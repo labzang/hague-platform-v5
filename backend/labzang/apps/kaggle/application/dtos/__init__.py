@@ -1,14 +1,15 @@
 """Application DTOs — 유스케이스/포트 간 데이터 전달. 도메인 VO와 분리."""
-from labzang.apps.ml.application.dtos.titanic_dto import (
+
+from labzang.apps.kaggle.application.dtos.titanic_dto import (
     EvaluationResult,
     PreprocessResult,
-    TitanicDatasetDto,
-    TitanicRowDto,
+    TitanicDatasetDTO,
+    TitanicRowDTO,
 )
 
 __all__ = [
     "EvaluationResult",
     "PreprocessResult",
-    "TitanicDatasetDto",
-    "TitanicRowDto",
+    "TitanicDatasetDTO",
+    "TitanicRowDTO",
 ]

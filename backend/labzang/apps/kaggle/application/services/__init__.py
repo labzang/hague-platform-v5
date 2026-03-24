@@ -1,3 +1,6 @@
-from labzang.apps.ml.application.services.wordcloud import SamsungWordcloudService, EmmaWordcloudService
+from labzang.apps.wordcloud.application.services import (
+    EmmaWordcloudService,
+    SamsungWordcloudService,
+)
 
 __all__ = ["SamsungWordcloudService", "EmmaWordcloudService"]

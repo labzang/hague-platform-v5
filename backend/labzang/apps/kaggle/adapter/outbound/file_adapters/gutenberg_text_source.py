@@ -7,7 +7,7 @@ from pathlib import Path
 
 import nltk  # type: ignore[import-untyped]
 
-from labzang.apps.ml.application.ports.output import TextSourcePort
+from labzang.apps.wordcloud.application.ports.output.wordcloud_ports import TextSourcePort
 
 KEY_EMMA_CORPUS = "emma_corpus"
 KEY_FONT_PATH = "font_path"

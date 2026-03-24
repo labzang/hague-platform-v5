@@ -1,0 +1,41 @@
+"""경기장 데이터 처리 상태 스키마."""
+from typing import List, Dict, Any
+
+from labzang.apps.soccer.application.orchestrators.states.base_state import (
+    BaseProcessingState,
+)
+from labzang.apps.soccer.application.orchestrators.states.database_result import (
+    DatabaseResult,
+)
+
+
+class StadiumProcessingState(BaseProcessingState):
+    """경기장 데이터 처리 상태 스키마.
+
+    LangGraph StateGraph에서 사용하는 상태 정의.
+    """
+
+    # 입력 데이터
+    items: List[Dict[str, Any]]
+
+    # 검증 결과
+    validation_errors: List[Dict[str, Any]]
+
+    # 전략 판단 결과
+    strategy_type: str  # "policy" | "rule"
+
+    # 정규화된 데이터
+    normalized_items: List[Dict[str, Any]]
+
+    # 정책 기반 처리 결과
+    policy_result: Dict[str, Any]
+
+    # 규칙 기반 처리 결과
+    rule_result: Dict[str, Any]
+
+    # 데이터베이스 저장 결과 (구체적인 구조로 정의)
+    db_result: DatabaseResult
+
+    # 최종 결과
+    final_result: Dict[str, Any]
+

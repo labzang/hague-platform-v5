@@ -5,7 +5,7 @@
 from dataclasses import dataclass
 from typing import Optional
 
-from labzang.apps.ml.domain.value_objects import (
+from labzang.apps.kaggle.domain.value_objects.titanic_vo import (
     Age,
     Embarked,
     Fare,

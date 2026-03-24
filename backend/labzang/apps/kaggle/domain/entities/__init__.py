@@ -3,17 +3,10 @@
 - 외부 라이브러리(pandas, sklearn, DB 등) 의존 없음
 """
 
-from labzang.apps.ml.domain.entities.geospatial.seoul_crime import (
-    SeoulCrime,
-    SeoulCrime,
-    SeoulCrimeModels,
-)
-from labzang.apps.ml.domain.entities.kaggle.titanic import Passenger, TitanicModels
+from labzang.apps.geospatial.domain.entities.seoul_crime import SeoulCrime
+from labzang.apps.kaggle.domain.entities.titanic import Passenger
 
 __all__ = [
     "SeoulCrime",
     "Passenger",
-    "SeoulCrime",
-    "SeoulCrimeModels",
-    "TitanicModels",
 ]
