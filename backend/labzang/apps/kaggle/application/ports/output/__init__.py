@@ -9,7 +9,7 @@ from labzang.apps.geospatial.application.ports.seoul_crime_port import (
     SeoulCrimePort,
     SeoulPreprocessorPort,
 )
-from labzang.apps.kaggle.application.ports.output.titanic_output_port import (
+from labzang.apps.kaggle.application.ports.output.titanic_repo_port import (
     ModelRunnerPort,
     PreprocessorPort,
     TitanicDataPort,

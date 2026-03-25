@@ -1,6 +1,6 @@
 """Application use cases (wired from composition root)."""
 
-from labzang.apps.kaggle.application.use_cases.titanic_usecase import (
+from labzang.apps.kaggle.application.use_cases.titanic_uc import (
     EvaluateTitanicUC,
     PreprocessTitanicUC,
     SubmitTitanicUC,

@@ -6,15 +6,27 @@
 from fastapi import APIRouter, Depends, HTTPException
 from fastapi.responses import JSONResponse
 
+from labzang.apps.geospatial.seoul_crime.adapter.inbound.api.v1.seoul_cctv_uploader import (
+    router as seoul_cctv_uploader_router,
+)
+from labzang.apps.geospatial.seoul_crime.adapter.inbound.api.v1.seoul_population_uploader import (
+    router as seoul_population_uploader_router,
+)
+from labzang.apps.geospatial.seoul_crime.adapter.inbound.api.v1.seoul_map_router import (
+    router as seoul_map_router,
+)
 from labzang.apps.geospatial.application.use_cases.seoul_crime_uc import (
     PreprocessSeoulCrimeUC,
 )
-from labzang.apps.kaggle.adapter.inbound.dependencies import (
+from labzang.apps.geospatial.adapter.inbound.dependencies import (
     get_preprocess_seoul_use_case,
 )
 from labzang.shared import create_response
 
 router = APIRouter(tags=["seoul-hex"])  # prefix는 main에서 /seoul 로 등록
+router.include_router(seoul_cctv_uploader_router, prefix="/cctv")
+router.include_router(seoul_population_uploader_router, prefix="/population")
+router.include_router(seoul_map_router, prefix="/map")
 
 
 @router.get("/")
