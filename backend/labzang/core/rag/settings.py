@@ -1,4 +1,7 @@
-"""RAG/벡터스토어용 설정 (환경 변수). app.config 의존 제거."""
+"""RAG/벡터스토어용 설정 (환경 변수)."""
+
+from __future__ import annotations
+
 import os
 
 

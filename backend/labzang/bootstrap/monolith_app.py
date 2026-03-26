@@ -11,17 +11,17 @@ from __future__ import annotations
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from labzang.apps.auth.adapter.inbound.api.v1.auth_router import router as auth_router
-from labzang.apps.chat.adapter.inbound.api.v1.chat_router import router as chat_router
-from labzang.apps.chat.adapter.inbound.api.v1.search_router import router as search_router
-from labzang.apps.crawler.adapter.inbound.api.v1.crawler_router import router as crawler_router
-from labzang.apps.kaggle.adapter.inbound.api.v1 import (
+from labzang.apps.biz.auth.adapter.inbound.api.v1.auth_router import router as auth_router
+from labzang.apps.com.chat.adapter.inbound.api.v1.chat_router import router as chat_router
+from labzang.apps.com.chat.adapter.inbound.api.v1.search_router import router as search_router
+from labzang.apps.ext.crawler.adapter.inbound.api.v1.crawler_router import router as crawler_router
+from labzang.apps.data.kaggle.santander.adapter.inbound.api.v1 import (
     seoul_crime_router,
     titanic_router,
     us_unemployment_router,
     wordcloud_router,
 )
-from labzang.apps.transformer.application.koelectra.koelectra_router import (
+from labzang.apps.ai.transformer.application.koelectra.koelectra_router import (
     router as koelectra_router,
 )
 from labzang.core.config import ChatbotServiceConfig

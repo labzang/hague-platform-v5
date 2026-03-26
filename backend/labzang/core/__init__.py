@@ -1,13 +1,4 @@
-"""
-labzang 인프라 기반 (core).
-- config: 설정 베이스 (BaseServiceConfig, DatabaseConfig, RedisConfig)
-- database: DB/Redis 연결, 세션, 스키마
-- paths: LABZANG_ROOT, BACKEND_ROOT, APPS_ROOT 등 절대 경로
-- middleware: LoggingMiddleware, CORSMiddleware
-- llm: init_korean_llm, init_korean_embeddings
-- rag: get_vectorstore, create_rag_chain 등
-공통 예외·유틸은 labzang.shared 사용.
-"""
+"""labzang core package exports."""
 
 from labzang.core.config import (
     BaseServiceConfig,
@@ -20,6 +11,7 @@ from labzang.core.paths import (
     BACKEND_ROOT,
     APPS_ROOT,
     LEARNING_ROOT,
+    ML_ROOT,
     CRAWLER_ROOT,
     TRANSFORMER_ROOT,
     CHAT_ROOT,
@@ -27,8 +19,6 @@ from labzang.core.paths import (
 )
 from labzang.core.middleware import LoggingMiddleware, CORSMiddleware
 from labzang.core import database
-from labzang.core import llm
-from labzang.core import rag
 
 __all__ = [
     "BaseServiceConfig",
@@ -39,6 +29,7 @@ __all__ = [
     "BACKEND_ROOT",
     "APPS_ROOT",
     "LEARNING_ROOT",
+    "ML_ROOT",
     "CRAWLER_ROOT",
     "TRANSFORMER_ROOT",
     "CHAT_ROOT",
@@ -46,6 +37,4 @@ __all__ = [
     "LoggingMiddleware",
     "CORSMiddleware",
     "database",
-    "llm",
-    "rag",
 ]
