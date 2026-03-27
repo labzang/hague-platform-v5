@@ -8,11 +8,11 @@ from typing import Any, Dict, List
 
 from sqlalchemy import select
 
-from labzang.apps.soccer.stadium.adapter.outbound.orm.stadium_orm import StadiumORM
-from labzang.apps.soccer.stadium.application.ports.output.stadium_repository import (
+from labzang.apps.biz.soccer.stadium.adapter.outbound.orm.stadium_orm import StadiumORM
+from labzang.apps.biz.soccer.stadium.application.ports.output.stadium_repository import (
     StadiumRepository,
 )
-from labzang.apps.soccer.stadium.domain.entities.stadium import Stadium
+from labzang.apps.biz.soccer.stadium.domain.entities.stadium import Stadium
 from labzang.core.database import AsyncSessionLocal
 
 logger = logging.getLogger(__name__)

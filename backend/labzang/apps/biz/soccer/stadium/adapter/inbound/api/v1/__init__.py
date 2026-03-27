@@ -2,10 +2,10 @@
 
 from fastapi import APIRouter
 
-from labzang.apps.soccer.stadium.adapter.inbound.api.v1.stadium_find_router import (
+from labzang.apps.biz.soccer.stadium.adapter.inbound.api.v1.stadium_find_router import (
     router as find_router,
 )
-from labzang.apps.soccer.stadium.adapter.inbound.api.v1.stadium_upload_router import (
+from labzang.apps.biz.soccer.stadium.adapter.inbound.api.v1.stadium_upload_router import (
     router as upload_router,
 )
 

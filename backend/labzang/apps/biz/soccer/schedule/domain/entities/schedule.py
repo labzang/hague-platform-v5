@@ -6,7 +6,7 @@ from __future__ import annotations
 from dataclasses import dataclass
 from typing import Any, Mapping, Optional
 
-from labzang.apps.soccer.schedule.domain.value_objects.schedule_vo import (
+from labzang.apps.biz.soccer.schedule.domain.value_objects.schedule_vo import (
     MatchScore,
     ScheDate,
     ScheduleGubun,

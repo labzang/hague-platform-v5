@@ -1,3 +1,3 @@
-from labzang.apps.soccer.player.adapter.outbound.orm.player_orm import PlayerORM
+from labzang.apps.biz.soccer.player.adapter.outbound.orm.player_orm import PlayerORM
 
 __all__ = ["PlayerORM"]

@@ -5,10 +5,10 @@ from __future__ import annotations
 
 from typing import Any, Dict, List
 
-from labzang.apps.soccer.schedule.application.ports.input.schedule_command import (
+from labzang.apps.biz.soccer.schedule.application.ports.input.schedule_command import (
     ScheduleCommand,
 )
-from labzang.apps.soccer.schedule.application.ports.output.schedule_repository import (
+from labzang.apps.biz.soccer.schedule.application.ports.output.schedule_repository import (
     ScheduleRepository,
 )
 

@@ -7,12 +7,12 @@ from typing import Annotated, List
 
 from fastapi import APIRouter, Depends, HTTPException, Path
 
-from labzang.apps.soccer.team.adapter.inbound.schemas.team_response import TeamResponse
-from labzang.apps.soccer.team.adapter.outbound.impl.team_reader_impl import (
+from labzang.apps.biz.soccer.team.adapter.inbound.schemas.team_response import TeamResponse
+from labzang.apps.biz.soccer.team.adapter.outbound.impl.team_reader_impl import (
     TeamReaderImpl,
 )
-from labzang.apps.soccer.team.application.ports.input.team_query import TeamQuery
-from labzang.apps.soccer.team.application.use_cases.team_query_impl import TeamQueryImpl
+from labzang.apps.biz.soccer.team.application.ports.input.team_query import TeamQuery
+from labzang.apps.biz.soccer.team.application.use_cases.team_query_impl import TeamQueryImpl
 
 router = APIRouter()
 

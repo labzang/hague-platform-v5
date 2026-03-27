@@ -7,16 +7,16 @@ from typing import Annotated, List
 
 from fastapi import APIRouter, Depends, HTTPException, Path
 
-from labzang.apps.soccer.schedule.adapter.inbound.schemas.schedule_response import (
+from labzang.apps.biz.soccer.schedule.adapter.inbound.schemas.schedule_response import (
     ScheduleResponse,
 )
-from labzang.apps.soccer.schedule.adapter.outbound.impl.schedule_reader_impl import (
+from labzang.apps.biz.soccer.schedule.adapter.outbound.impl.schedule_reader_impl import (
     ScheduleReaderImpl,
 )
-from labzang.apps.soccer.schedule.application.ports.input.schedule_query import (
+from labzang.apps.biz.soccer.schedule.application.ports.input.schedule_query import (
     ScheduleQuery,
 )
-from labzang.apps.soccer.schedule.application.use_cases.schedule_query_impl import (
+from labzang.apps.biz.soccer.schedule.application.use_cases.schedule_query_impl import (
     ScheduleQueryImpl,
 )
 

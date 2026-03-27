@@ -8,9 +8,9 @@ from typing import Any, List, Optional
 
 from sqlalchemy import select
 
-from labzang.apps.soccer.application.dtos.player_dto import PlayerDTO
-from labzang.apps.soccer.player.adapter.outbound.orm.player_orm import PlayerORM
-from labzang.apps.soccer.player.application.ports.output.player_reader import (
+from labzang.apps.biz.soccer.player.application.dtos.player_dto import PlayerDTO
+from labzang.apps.biz.soccer.player.adapter.outbound.orm.player_orm import PlayerORM
+from labzang.apps.biz.soccer.player.application.ports.output.player_reader import (
     PlayerReader,
 )
 from labzang.core.database import AsyncSessionLocal

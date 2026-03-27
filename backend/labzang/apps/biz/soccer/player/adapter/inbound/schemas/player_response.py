@@ -8,7 +8,7 @@ from typing import Any, List, Optional
 
 from pydantic import BaseModel, ConfigDict, Field
 
-from labzang.apps.soccer.application.dtos.player_dto import PlayerDTO as HubPlayerDTO
+from labzang.apps.biz.soccer.player.application.dtos.player_dto import PlayerDTO as HubPlayerDTO
 
 
 class PlayerResponse(BaseModel):

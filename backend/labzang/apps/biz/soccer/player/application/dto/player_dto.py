@@ -9,7 +9,7 @@ from typing import TYPE_CHECKING, Any, Optional
 from pydantic import BaseModel, ConfigDict, Field
 
 if TYPE_CHECKING:
-    from labzang.apps.soccer.player.domain.entities.player import Player
+    from labzang.apps.biz.soccer.player.domain.entities.player import Player
 
 
 class PlayerDTO(BaseModel):
@@ -36,7 +36,7 @@ class PlayerDTO(BaseModel):
         return cls.model_validate(entity.to_json_dict())
 
     def to_entity(self) -> Player:
-        from labzang.apps.soccer.player.domain.entities.player import Player
+        from labzang.apps.biz.soccer.player.domain.entities.player import Player
 
         return Player.from_json_dict(self.model_dump(mode="json"))
 

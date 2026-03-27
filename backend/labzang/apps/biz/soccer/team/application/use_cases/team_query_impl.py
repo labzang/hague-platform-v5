@@ -5,8 +5,8 @@ from __future__ import annotations
 
 from typing import Any, List, Optional
 
-from labzang.apps.soccer.team.application.ports.input.team_query import TeamQuery
-from labzang.apps.soccer.team.application.ports.output.team_reader import TeamReader
+from labzang.apps.biz.soccer.team.application.ports.input.team_query import TeamQuery
+from labzang.apps.biz.soccer.team.application.ports.output.team_reader import TeamReader
 
 
 class TeamQueryImpl(TeamQuery):

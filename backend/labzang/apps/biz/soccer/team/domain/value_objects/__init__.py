@@ -1,4 +1,4 @@
-from labzang.apps.soccer.team.domain.value_objects.team_vo import (
+from labzang.apps.biz.soccer.team.domain.value_objects.team_vo import (
     Address,
     Ddd,
     ETeamName,

@@ -7,16 +7,16 @@ from typing import Annotated, List
 
 from fastapi import APIRouter, Depends, HTTPException, Path
 
-from labzang.apps.soccer.stadium.adapter.inbound.schemas.stadium_response import (
+from labzang.apps.biz.soccer.stadium.adapter.inbound.schemas.stadium_response import (
     StadiumResponse,
 )
-from labzang.apps.soccer.stadium.adapter.outbound.impl.stadium_reader_impl import (
+from labzang.apps.biz.soccer.stadium.adapter.outbound.impl.stadium_reader_impl import (
     StadiumReaderImpl,
 )
-from labzang.apps.soccer.stadium.application.ports.input.stadium_query import (
+from labzang.apps.biz.soccer.stadium.application.ports.input.stadium_query import (
     StadiumQuery,
 )
-from labzang.apps.soccer.stadium.application.use_cases.stadium_query_impl import (
+from labzang.apps.biz.soccer.stadium.application.use_cases.stadium_query_impl import (
     StadiumQueryImpl,
 )
 

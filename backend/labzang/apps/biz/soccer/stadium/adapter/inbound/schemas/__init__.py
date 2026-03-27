@@ -1,9 +1,9 @@
-from labzang.apps.soccer.stadium.adapter.inbound.schemas.stadium_request import (
+from labzang.apps.biz.soccer.stadium.adapter.inbound.schemas.stadium_request import (
     StadiumSearchQuery,
     StadiumSearchRequest,
     get_stadium_search_params,
 )
-from labzang.apps.soccer.stadium.adapter.inbound.schemas.stadium_response import (
+from labzang.apps.biz.soccer.stadium.adapter.inbound.schemas.stadium_response import (
     StadiumResponse,
 )
 

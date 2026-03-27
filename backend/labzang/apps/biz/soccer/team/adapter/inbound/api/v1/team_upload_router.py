@@ -8,11 +8,11 @@ from typing import Any, Dict, List
 from fastapi import APIRouter, Depends, File, HTTPException, UploadFile
 from fastapi.responses import JSONResponse
 
-from labzang.apps.soccer.team.adapter.outbound.impl.team_repository_impl import (
+from labzang.apps.biz.soccer.team.adapter.outbound.impl.team_repository_impl import (
     TeamRepositoryImpl,
 )
-from labzang.apps.soccer.team.application.ports.input.team_command import TeamCommand
-from labzang.apps.soccer.team.application.use_cases.team_command_impl import (
+from labzang.apps.biz.soccer.team.application.ports.input.team_command import TeamCommand
+from labzang.apps.biz.soccer.team.application.use_cases.team_command_impl import (
     TeamCommandImpl,
 )
 

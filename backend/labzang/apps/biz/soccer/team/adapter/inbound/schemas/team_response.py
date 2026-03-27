@@ -8,7 +8,7 @@ from typing import Any, List, Optional
 
 from pydantic import BaseModel, ConfigDict, Field
 
-from labzang.apps.soccer.application.dtos.team_dto import TeamDTO as HubTeamDTO
+from labzang.apps.biz.soccer.team.application.dtos.team_dto import TeamDTO as HubTeamDTO
 
 
 class TeamResponse(BaseModel):

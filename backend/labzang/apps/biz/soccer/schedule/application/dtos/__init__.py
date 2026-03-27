@@ -1,3 +1,3 @@
-from labzang.apps.soccer.schedule.application.dtos.schedule_dto import ScheduleDTO
+from labzang.apps.biz.soccer.schedule.application.dtos.schedule_dto import ScheduleDTO
 
 __all__ = ["ScheduleDTO"]

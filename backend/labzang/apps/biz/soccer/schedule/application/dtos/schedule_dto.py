@@ -8,7 +8,7 @@ from typing import TYPE_CHECKING, Any, Optional
 from pydantic import BaseModel, ConfigDict, Field
 
 if TYPE_CHECKING:
-    from labzang.apps.soccer.schedule.domain.entities.schedule import Schedule
+    from labzang.apps.biz.soccer.schedule.domain.entities.schedule import Schedule
 
 
 class ScheduleDTO(BaseModel):
@@ -33,7 +33,7 @@ class ScheduleDTO(BaseModel):
         return cls.model_validate(entity.to_json_dict())
 
     def to_entity(self) -> Schedule:
-        from labzang.apps.soccer.schedule.domain.entities.schedule import Schedule
+        from labzang.apps.biz.soccer.schedule.domain.entities.schedule import Schedule
 
         return Schedule.from_json_dict(self.model_dump(mode="json"))
 

@@ -5,8 +5,8 @@ from __future__ import annotations
 
 from typing import Any, List, Optional
 
-from labzang.apps.soccer.stadium.application.ports.input.stadium_query import StadiumQuery
-from labzang.apps.soccer.stadium.application.ports.output.stadium_reader import (
+from labzang.apps.biz.soccer.stadium.application.ports.input.stadium_query import StadiumQuery
+from labzang.apps.biz.soccer.stadium.application.ports.output.stadium_reader import (
     StadiumReader,
 )
 

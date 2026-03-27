@@ -8,13 +8,13 @@ from typing import Any, Dict, List
 from fastapi import APIRouter, Depends, File, HTTPException, UploadFile
 from fastapi.responses import JSONResponse
 
-from labzang.apps.soccer.schedule.adapter.outbound.impl.schedule_repository_impl import (
+from labzang.apps.biz.soccer.schedule.adapter.outbound.impl.schedule_repository_impl import (
     ScheduleRepositoryImpl,
 )
-from labzang.apps.soccer.schedule.application.ports.input.schedule_command import (
+from labzang.apps.biz.soccer.schedule.application.ports.input.schedule_command import (
     ScheduleCommand,
 )
-from labzang.apps.soccer.schedule.application.use_cases.schedule_command_impl import (
+from labzang.apps.biz.soccer.schedule.application.use_cases.schedule_command_impl import (
     ScheduleCommandImpl,
 )
 

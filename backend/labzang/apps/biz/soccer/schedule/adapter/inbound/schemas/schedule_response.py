@@ -8,7 +8,7 @@ from typing import Any, List, Optional
 
 from pydantic import BaseModel, ConfigDict, Field
 
-from backend.labzang.apps.soccer.schedule.application.dtos.schedule_dto import ScheduleDTO
+from labzang.apps.biz.soccer.schedule.application.dtos.schedule_dto import ScheduleDTO
 
 
 class ScheduleResponse(BaseModel):

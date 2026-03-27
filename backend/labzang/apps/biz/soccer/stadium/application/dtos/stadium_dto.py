@@ -8,7 +8,7 @@ from typing import TYPE_CHECKING, Any, Optional
 from pydantic import BaseModel, ConfigDict, Field
 
 if TYPE_CHECKING:
-    from labzang.apps.soccer.stadium.domain.entities.stadium import Stadium
+    from labzang.apps.biz.soccer.stadium.domain.entities.stadium import Stadium
 
 
 def _normalize_stadium_jsonl_keys(row: dict[str, Any]) -> dict[str, Any]:
@@ -38,7 +38,7 @@ class StadiumDTO(BaseModel):
         return cls.model_validate(entity.to_json_dict())
 
     def to_entity(self) -> Stadium:
-        from labzang.apps.soccer.stadium.domain.entities.stadium import Stadium
+        from labzang.apps.biz.soccer.stadium.domain.entities.stadium import Stadium
 
         return Stadium.from_json_dict(self.model_dump(mode="json"))
 

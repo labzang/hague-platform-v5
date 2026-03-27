@@ -8,9 +8,9 @@ from typing import Any, List, Optional
 
 from sqlalchemy import select
 
-from labzang.apps.soccer.application.dtos.schedule_dto import ScheduleDTO
-from labzang.apps.soccer.schedule.adapter.outbound.orm.schedule_orm import ScheduleORM
-from labzang.apps.soccer.schedule.application.ports.output.schedule_reader import (
+from labzang.apps.biz.soccer.schedule.application.dtos.schedule_dto import ScheduleDTO
+from labzang.apps.biz.soccer.schedule.adapter.outbound.orm.schedule_orm import ScheduleORM
+from labzang.apps.biz.soccer.schedule.application.ports.output.schedule_reader import (
     ScheduleReader,
 )
 from labzang.core.database import AsyncSessionLocal

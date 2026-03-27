@@ -1,4 +1,4 @@
-from labzang.apps.soccer.player.domain.value_objects.player_vo import (
+from labzang.apps.biz.soccer.player.domain.value_objects.player_vo import (
     BackNumber,
     BirthDate,
     EPlayerName,

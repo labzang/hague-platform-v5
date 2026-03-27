@@ -6,7 +6,7 @@ from __future__ import annotations
 from dataclasses import dataclass
 from typing import Any, Mapping, Optional
 
-from labzang.apps.soccer.stadium.domain.value_objects.stadium_vo import (
+from labzang.apps.biz.soccer.stadium.domain.value_objects.stadium_vo import (
     HometeamCode,
     SeatCount,
     StadiumAddress,

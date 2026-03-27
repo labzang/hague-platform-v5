@@ -14,9 +14,15 @@ from labzang.apps.data.geospatial.application.use_cases.seoul_crime_uc import (
 )
 from labzang.shared import create_response
 
-from .seoul_cctv_router import router as seoul_cctv_router
-from .seoul_map_router import router as seoul_map_router
-from .seoul_population_router import router as seoul_population_router
+from labzang.apps.data.geospatial.seoul_crime.adapter.inbound.api.v1.seoul_cctv_router import (
+    router as seoul_cctv_router,
+)
+from labzang.apps.data.geospatial.seoul_crime.adapter.inbound.api.v1.seoul_map_router import (
+    router as seoul_map_router,
+)
+from labzang.apps.data.geospatial.seoul_crime.adapter.inbound.api.v1.seoul_population_router import (
+    router as seoul_population_router,
+)
 
 router = APIRouter(tags=["seoul-hex"])  # prefix는 main에서 /seoul 로 등록
 router.include_router(seoul_cctv_router, prefix="/cctv")

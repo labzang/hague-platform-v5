@@ -5,8 +5,8 @@ from __future__ import annotations
 
 from typing import Any, Dict, List
 
-from labzang.apps.soccer.team.application.ports.input.team_command import TeamCommand
-from labzang.apps.soccer.team.application.ports.output.team_repository import (
+from labzang.apps.biz.soccer.team.application.ports.input.team_command import TeamCommand
+from labzang.apps.biz.soccer.team.application.ports.output.team_repository import (
     TeamRepository,
 )
 

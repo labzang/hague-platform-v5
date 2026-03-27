@@ -5,8 +5,8 @@ from __future__ import annotations
 
 from typing import Any, List, Optional
 
-from labzang.apps.soccer.player.application.ports.input.player_query import PlayerQuery
-from labzang.apps.soccer.player.application.ports.output.player_reader import (
+from labzang.apps.biz.soccer.player.application.ports.input.player_query import PlayerQuery
+from labzang.apps.biz.soccer.player.application.ports.output.player_reader import (
     PlayerReader,
 )
 

@@ -5,10 +5,10 @@ from __future__ import annotations
 
 from typing import Any, Dict, List
 
-from labzang.apps.soccer.player.application.ports.input.player_command import (
+from labzang.apps.biz.soccer.player.application.ports.input.player_command import (
     PlayerCommand,
 )
-from labzang.apps.soccer.player.application.ports.output.player_repository import (
+from labzang.apps.biz.soccer.player.application.ports.output.player_repository import (
     PlayerRepository,
 )
 

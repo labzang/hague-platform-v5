@@ -8,13 +8,13 @@ from typing import Any, Dict, List
 from fastapi import APIRouter, Depends, File, HTTPException, UploadFile
 from fastapi.responses import JSONResponse
 
-from labzang.apps.soccer.stadium.adapter.outbound.impl.stadium_repository_impl import (
+from labzang.apps.biz.soccer.stadium.adapter.outbound.impl.stadium_repository_impl import (
     StadiumRepositoryImpl,
 )
-from labzang.apps.soccer.stadium.application.ports.input.stadium_command import (
+from labzang.apps.biz.soccer.stadium.application.ports.input.stadium_command import (
     StadiumCommand,
 )
-from labzang.apps.soccer.stadium.application.use_cases.stadium_command_impl import (
+from labzang.apps.biz.soccer.stadium.application.use_cases.stadium_command_impl import (
     StadiumCommandImpl,
 )
 

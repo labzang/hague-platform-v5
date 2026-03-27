@@ -2,10 +2,10 @@
 
 from fastapi import APIRouter
 
-from labzang.apps.soccer.schedule.adapter.inbound.api.v1.schedule_find_router import (
+from labzang.apps.biz.soccer.schedule.adapter.inbound.api.v1.schedule_find_router import (
     router as find_router,
 )
-from labzang.apps.soccer.schedule.adapter.inbound.api.v1.schedule_upload_router import (
+from labzang.apps.biz.soccer.schedule.adapter.inbound.api.v1.schedule_upload_router import (
     router as upload_router,
 )
 
