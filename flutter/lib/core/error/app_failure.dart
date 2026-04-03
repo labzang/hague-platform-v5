@@ -1,6 +1,7 @@
-﻿class AppFailure implements Exception {
-  final String message;
+class AppFailure implements Exception {
   const AppFailure(this.message);
+
+  final String message;
 
   @override
   String toString() => 'AppFailure(message: $message)';

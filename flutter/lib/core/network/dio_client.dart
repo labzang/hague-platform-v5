@@ -1,5 +1,6 @@
-﻿import 'package:dio/dio.dart';
+import 'package:dio/dio.dart';
 
+/// Shared HTTP client. Wire base URL via [DioClient] constructor or env later.
 class DioClient {
   DioClient({String? baseUrl})
       : dio = Dio(
