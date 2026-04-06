@@ -52,28 +52,36 @@ class AppSideMenuPanel extends StatelessWidget {
                 padding: const EdgeInsets.fromLTRB(16, 10, 8, 12),
                 child: Row(
                   children: [
-                    Container(
-                      width: 44,
-                      height: 44,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(12),
-                        gradient: const LinearGradient(
-                          begin: Alignment.topLeft,
-                          end: Alignment.bottomRight,
-                          colors: <Color>[
-                            Color(0xFF8B6CF0),
-                            AppBrand.purple,
-                          ],
+                    CupertinoButton(
+                      padding: EdgeInsets.zero,
+                      minimumSize: Size.zero,
+                      onPressed: () {
+                        onClose();
+                        context.go('/guest');
+                      },
+                      child: Container(
+                        width: 44,
+                        height: 44,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(12),
+                          gradient: const LinearGradient(
+                            begin: Alignment.topLeft,
+                            end: Alignment.bottomRight,
+                            colors: <Color>[
+                              Color(0xFF8B6CF0),
+                              AppBrand.purple,
+                            ],
+                          ),
                         ),
-                      ),
-                      alignment: Alignment.center,
-                      child: const Text(
-                        'L',
-                        style: TextStyle(
-                          color: CupertinoColors.white,
-                          fontSize: 22,
-                          fontWeight: FontWeight.w800,
-                          height: 1,
+                        alignment: Alignment.center,
+                        child: const Text(
+                          'L',
+                          style: TextStyle(
+                            color: CupertinoColors.white,
+                            fontSize: 22,
+                            fontWeight: FontWeight.w800,
+                            height: 1,
+                          ),
                         ),
                       ),
                     ),
