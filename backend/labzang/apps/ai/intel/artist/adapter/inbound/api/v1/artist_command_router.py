@@ -1,0 +1,1 @@
+# src/labzang/apps/ai/intel/artist/adapter/inbound/api/v1/artist_command_router.py

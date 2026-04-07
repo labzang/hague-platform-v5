@@ -1,0 +1,1 @@
+# src/labzang/apps/ai/intel/artist/adapter/inbound/schemas/artist_request.py
