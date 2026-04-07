@@ -11,6 +11,6 @@ void main() {
       ),
     );
     await tester.pumpAndSettle();
-    expect(find.text('로그인'), findsOneWidget);
+    expect(find.text('랩장 아카데미'), findsOneWidget);
   });
 }

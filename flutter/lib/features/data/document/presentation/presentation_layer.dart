@@ -1,4 +1,4 @@
-/// Presentation layer — backend `labzang.apps.data.document`
+/// Presentation layer — backend `labzang.apps.dash.document`
 abstract final class AppsDataDocumentPresentationLayer {
   const AppsDataDocumentPresentationLayer._();
 }

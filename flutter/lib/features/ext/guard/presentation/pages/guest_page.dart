@@ -4,7 +4,7 @@ import 'package:labzang_app/shared/widgets/app_drawer_layout.dart';
 import 'package:labzang_app/shared/widgets/labzang_home_dashboard.dart';
 
 /// 게스트 로그인 후 홈 화면 — Kroaddy 스타일 메인 대시보드.
-/// Backend: `labzang.apps.ext.auth`
+/// Backend: `labzang.apps.ext.guard`
 class GuestPage extends StatelessWidget {
   const GuestPage({super.key});
 

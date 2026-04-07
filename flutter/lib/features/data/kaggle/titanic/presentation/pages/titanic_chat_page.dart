@@ -14,7 +14,7 @@ import 'package:labzang_app/features/ai/chat/domain/entities/chat_message.dart';
 import 'package:labzang_app/features/ai/chat/presentation/widgets/chat_message_bubble.dart';
 import 'package:labzang_app/shared/widgets/app_drawer_layout.dart';
 
-/// Titanic 대회 Q&A (샘플) — `labzang.apps.data.kaggle` 하위 competition 모듈.
+/// Titanic 대회 Q&A (샘플) — `labzang.apps.dash.kaggle` 하위 competition 모듈.
 class TitanicChatPage extends StatefulWidget {
   const TitanicChatPage({super.key});
 

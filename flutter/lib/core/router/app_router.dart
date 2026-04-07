@@ -14,8 +14,10 @@ import '../../features/data/document/presentation/pages/data_document_home_page.
 import '../../features/data/geospatial/presentation/geospatial_routes.dart';
 import '../../features/data/kaggle/presentation/kaggle_routes.dart';
 import '../../features/data/wordcloud/presentation/wordcloud_routes.dart';
-import '../../features/ext/auth/presentation/pages/guest_page.dart';
-import '../../features/ext/auth/presentation/pages/login_page.dart';
+import '../../features/ext/guard/presentation/auth_routes.dart';
+import '../../features/ext/guard/presentation/pages/guest_page.dart';
+import '../../features/ext/guard/presentation/pages/login_page.dart';
+import '../../features/ext/guard/presentation/pages/signup_page.dart';
 import '../../features/ext/crawler/presentation/crawler_routes.dart';
 
 /// 기본 라우트: `/` 로그인(구글·네이버·게스트), `/guest` 게스트 홈 — 제거하지 말 것.
@@ -32,6 +34,11 @@ final appRouterProvider = Provider<GoRouter>((ref) {
         path: '/guest',
         builder: (BuildContext context, GoRouterState state) =>
             const GuestPage(),
+      ),
+      GoRoute(
+        path: AuthRoutePaths.signup,
+        builder: (BuildContext context, GoRouterState state) =>
+            const SignupPage(),
       ),
       GoRoute(
         path: '/chat/rooms',

@@ -3,7 +3,7 @@ import 'package:go_router/go_router.dart';
 import 'package:labzang_app/features/data/wordcloud/presentation/wordcloud_routes.dart';
 import 'package:labzang_app/shared/widgets/app_drawer_layout.dart';
 
-/// `labzang.apps.data.wordcloud` 홈
+/// `labzang.apps.dash.wordcloud` 홈
 class DataWordcloudHomePage extends StatelessWidget {
   const DataWordcloudHomePage({super.key});
 

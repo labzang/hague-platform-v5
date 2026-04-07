@@ -3,10 +3,10 @@ import 'package:go_router/go_router.dart';
 import 'package:labzang_app/features/data/geospatial/presentation/geospatial_routes.dart';
 import 'package:labzang_app/shared/widgets/app_drawer_layout.dart';
 
-/// `labzang.apps.data.geospatial` 홈
+/// `labzang.apps.dash.geospatial` 홈
 /// Backend 콘텐츠:
-/// - `labzang.apps.data.geospatial.seoul_crime`
-/// - `labzang.apps.data.geospatial.us_unemployment`
+/// - `labzang.apps.dash.geospatial.seoul_crime`
+/// - `labzang.apps.dash.geospatial.us_unemployment`
 class DataGeospatialHomePage extends StatelessWidget {
   const DataGeospatialHomePage({super.key});
 

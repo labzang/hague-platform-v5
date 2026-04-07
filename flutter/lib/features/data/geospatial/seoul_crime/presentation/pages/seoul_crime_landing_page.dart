@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:labzang_app/shared/widgets/app_drawer_layout.dart';
 
-/// 서울 범죄 지리 시각화 랜딩 — `labzang.apps.data.geospatial.seoul_crime`
+/// 서울 범죄 지리 시각화 랜딩 — `labzang.apps.dash.geospatial.seoul_crime`
 class SeoulCrimeLandingPage extends StatelessWidget {
   const SeoulCrimeLandingPage({super.key});
 
