@@ -1,0 +1,1 @@
+# labzang/apps/ai/intel/artist/adapter/inbound/schemas/artiest_response.py
