@@ -1,4 +1,4 @@
-from labzang.apps.dash.geospatial.seoul_crime.application.use_cases.seoul_crime_map_uc import (
+from labzang.apps.dash.council.illustrator.folium.app.use_cases.seoul_crime_command_impl import (
     SeoulCrimeMapResult,
     SeoulCrimeMapUseCase,
 )

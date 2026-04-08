@@ -3,7 +3,7 @@ from __future__ import annotations
 from dataclasses import dataclass
 from typing import Any, Mapping, Optional
 
-from labzang.apps.dash.kaggle.titanic.domain.value_objects.titanic_vo import (
+from labzang.apps.ai.percept.detective.titanic.domain.value_objects.titanic_vo import (
     Age,
     Cabin,
     DatasetSplit,

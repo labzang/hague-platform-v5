@@ -30,6 +30,55 @@ class TitanicBatchUpsertRequest(BaseModel):
     rows: List[TitanicUpsertRequest] = Field(default_factory=list, min_length=1)
 
 
+class TitanicRowRequest(BaseModel):
+    """JSONL 한 줄에 해당하는 요청 모델 (legacy ingest 호환)."""
+
+    model_config = ConfigDict(str_strip_whitespace=True, populate_by_name=True)
+
+    PassengerId: Optional[int] = Field(None, gt=0, description="승객 ID")
+    Survived: Optional[int] = Field(None, ge=0, le=1, description="0=사망, 1=생존")
+    Pclass: Optional[int] = Field(None, ge=1, le=3, description="좌석 등급 1/2/3")
+    Name: Optional[str] = Field(None, max_length=256)
+    Gender: Optional[str] = Field(None, max_length=16, alias="Sex")
+    Age: Optional[float] = Field(None, ge=0, le=120)
+    SibSp: Optional[int] = Field(None, ge=0, description="형제/배우자 동반 수")
+    Parch: Optional[int] = Field(None, ge=0, description="부모/자녀 동반 수")
+    Ticket: Optional[str] = Field(None, max_length=64)
+    Fare: Optional[float] = Field(None, ge=0)
+    Cabin: Optional[str] = Field(None, max_length=32)
+    Embarked: Optional[str] = Field(None, max_length=1, description="S/C/Q")
+
+    def to_orm_kwargs(self) -> dict:
+        return {
+            "passenger_id": self.PassengerId,
+            "survived": self.Survived,
+            "pclass": self.Pclass,
+            "name": self.Name,
+            "gender": self.Gender,
+            "age": self.Age,
+            "sib_sp": self.SibSp,
+            "parch": self.Parch,
+            "ticket": self.Ticket,
+            "fare": self.Fare,
+            "cabin": self.Cabin,
+            "embarked": self.Embarked,
+        }
+
+
+class TitanicJsonlBody(BaseModel):
+    rows: List[TitanicRowRequest] = Field(default_factory=list)
+
+
+def parse_jsonl_to_rows(jsonl_text: str) -> List[TitanicRowRequest]:
+    rows: List[TitanicRowRequest] = []
+    for line in jsonl_text.strip().splitlines():
+        line = line.strip()
+        if not line:
+            continue
+        rows.append(TitanicRowRequest.model_validate_json(line))
+    return rows
+
+
 class TitanicSearchRequest(BaseModel):
     model_config = ConfigDict(str_strip_whitespace=True)
 

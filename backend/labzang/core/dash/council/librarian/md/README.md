@@ -22,8 +22,8 @@
 | `research/integration/` | research main 연동 |
 | `research/structure/` | 오케스트레이터 프로젝트 구조 |
 | `architecture/overview/` | Learning 앱 헥사고날·CRUD/오케스트레이터 개요 |
-| `architecture/hexagonal/` | 헥사고날 디렉터리 구조·README |
+| `architecture/hexagonal/` | 헥사고날 디렉터리(`HEX_STRUCTURE`), Learning/Soccer 샘플 README |
 | `architecture/concepts/` | application vs ontology 분리 이유 |
 | `architecture/plans/` | 최적화·구조 계획 |
-| `reference/langchain/` | LangChain 관련 참조(AGENTS/CLAUDE) |
+| `reference/langchain/` | LangChain 참조(AGENTS/CLAUDE), LangSmith 설정 |
 | `meta/` | 작업·태스크 메모 |

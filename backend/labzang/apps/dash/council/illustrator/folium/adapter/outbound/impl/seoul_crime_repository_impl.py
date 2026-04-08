@@ -10,44 +10,24 @@ from typing import Any, List
 
 import pandas as pd  # type: ignore[import-untyped]
 
-from labzang.apps.dash.geospatial.application.ports import (
-    SeoulCrimePort,
-    SeoulPreprocessorPort,
+from labzang.apps.dash.council.illustrator.folium.app.ports.output.seoul_crime_repository_port import SeoulCrimeRepositoryPort
+from labzang.apps.dash.council.illustrator.folium.app.ports.input.seoul_crime_command_port import (
     GeocodePort,
+    SeoulPreprocessorPort,
 )
+
 
 logger = logging.getLogger(__name__)
 
 
-# --- SeoulCrimePort ---
-class SeoulCrimeRepositoryImpl(SeoulCrimePort):
+# --- SeoulCrimeRepository (애플리케이션의 SeoulCrimePort와 동일 계약) ---
+class SeoulCrimeRepositoryImpl(SeoulCrimeRepositoryPort):
     def __init__(self, data_dir: Path, save_dir: Path):
         self._data_dir = Path(data_dir)
         self._save_dir = Path(save_dir)
 
-    def get_data_dir(self) -> str:
-        return str(self._data_dir)
-
     def get_save_dir(self) -> str:
         return str(self._save_dir)
-
-    def load_cctv(self) -> Any:
-        path = self._data_dir / "cctv.csv"
-        if not path.exists():
-            raise FileNotFoundError(f"cctv.csv 없음: {path}")
-        return pd.read_csv(path, encoding="utf-8")
-
-    def load_crime(self) -> Any:
-        path = self._data_dir / "crime.csv"
-        if not path.exists():
-            raise FileNotFoundError(f"crime.csv 없음: {path}")
-        return pd.read_csv(path, encoding="utf-8")
-
-    def load_pop(self) -> Any:
-        path = self._data_dir / "pop.xls"
-        if not path.exists():
-            raise FileNotFoundError(f"pop.xls 없음: {path}")
-        return pd.read_excel(path)
 
     def save_crime(self, crime_df: Any) -> str:
         self._save_dir.mkdir(parents=True, exist_ok=True)

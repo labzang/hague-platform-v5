@@ -4,7 +4,7 @@
 """
 
 from labzang.apps.dash.geospatial.domain.entities.seoul_crime import SeoulCrime
-from labzang.apps.dash.kaggle.santander.domain.entities.titanic import Passenger
+from labzang.apps.ai.percept.detective.santander.domain.entities.titanic import Passenger
 
 __all__ = [
     "SeoulCrime",

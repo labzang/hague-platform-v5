@@ -4,12 +4,12 @@ from labzang.apps.dash.geospatial.adapter.outbound.persistence.seoul_crime_repo 
     SeoulCrimeRepositoryImpl,
     SeoulPreprocessorAdapter,
 )
-from labzang.apps.dash.kaggle.santander.adapter.outbound.file_adapters import (
+from labzang.apps.ai.percept.detective.santander.adapter.outbound.file_adapters import (
     FileImageStorageAdapter,
     FileTextSourceAdapter,
     GutenbergTextSourceAdapter,
 )
-from labzang.apps.dash.kaggle.santander.adapter.outbound.repositories.titanic_repo import (
+from labzang.apps.ai.percept.detective.santander.adapter.outbound.repositories.titanic_repo import (
     CsvTitanicDataAdapter,
     SklearnTitanicModelAdapter,
     TitanicPreprocessorAdapter,

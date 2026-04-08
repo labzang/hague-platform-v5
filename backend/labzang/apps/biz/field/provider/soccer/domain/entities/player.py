@@ -6,7 +6,7 @@ from __future__ import annotations
 from dataclasses import dataclass
 from typing import Any, Mapping, Optional
 
-from labzang.apps.biz.asset.content.soccer.domain.value_objects.player_vo import (
+from labzang.apps.biz.field.provider.soccer.domain.value_objects.player_vo import (
     BackNumber,
     BirthDate,
     EPlayerName,

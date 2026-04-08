@@ -1,10 +1,10 @@
-from labzang.apps.dash.kaggle.santander.adapter.outbound.file_adapters.file_image_storage import (
+from labzang.apps.ai.percept.detective.santander.adapter.outbound.file_adapters.file_image_storage import (
     FileImageStorageAdapter,
 )
-from labzang.apps.dash.kaggle.santander.adapter.outbound.file_adapters.file_text_source import (
+from labzang.apps.ai.percept.detective.santander.adapter.outbound.file_adapters.file_text_source import (
     FileTextSourceAdapter,
 )
-from labzang.apps.dash.kaggle.santander.adapter.outbound.file_adapters.gutenberg_text_source import (
+from labzang.apps.ai.percept.detective.santander.adapter.outbound.file_adapters.gutenberg_text_source import (
     GutenbergTextSourceAdapter,
 )
 

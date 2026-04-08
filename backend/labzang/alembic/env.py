@@ -9,7 +9,7 @@ from sqlalchemy import engine_from_config, pool
 from labzang.core.database import Base
 
 # 모델 등록 → Base.metadata에 테이블 반영
-import labzang.apps.dash.kaggle.titanic.adapter.outbound.orm  # noqa: F401
+import labzang.apps.ai.percept.detective.titanic.adapter.outbound.orm  # noqa: F401
 
 config = context.config
 

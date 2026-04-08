@@ -5,11 +5,11 @@
 
 from typing import Any, Dict
 
-from labzang.apps.dash.wordcloud.samsung_report.application.ports.output import (
+from labzang.apps.dash.council.illustrator.cloud.app.ports.output import (
     ImageStoragePort,
     TextSourcePort,
 )
-from labzang.apps.dash.wordcloud.samsung_report.application.services.samsung_wordcloud_service import (
+from labzang.apps.dash.council.illustrator.cloud.app.services.samsung_wordcloud_service import (
     SamsungWordcloudService,
 )
 

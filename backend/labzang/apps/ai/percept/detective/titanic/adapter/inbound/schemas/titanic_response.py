@@ -4,7 +4,9 @@ from typing import Any, List, Optional
 
 from pydantic import BaseModel, ConfigDict, Field
 
-from labzang.apps.dash.kaggle.titanic.application.dtos.titanic_row_dto import TitanicRowDTO
+from labzang.apps.ai.percept.detective.titanic.app.dtos.titanic_row_dto import (
+    TitanicRowDTO,
+)
 
 
 class TitanicRowResponse(BaseModel):

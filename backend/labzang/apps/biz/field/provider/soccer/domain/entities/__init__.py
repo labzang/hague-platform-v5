@@ -1,3 +1,3 @@
-from labzang.apps.biz.asset.content.soccer.domain.entities.player import Player
+from labzang.apps.biz.field.provider.soccer.domain.entities.player import Player
 
 __all__ = ["Player"]

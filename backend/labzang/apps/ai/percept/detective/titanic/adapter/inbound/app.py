@@ -21,7 +21,7 @@ if os.path.exists("/app") and "/app" not in sys.path:
 
 # 설정 (Application 계층 제공)
 try:
-    from labzang.apps.dash.kaggle.santander.application.config import TitanicServiceConfig
+    from labzang.apps.ai.percept.detective.santander.application.config import TitanicServiceConfig
 
     config = TitanicServiceConfig()
 except Exception:
@@ -47,9 +47,12 @@ except ImportError:
 
 logger = setup_logging(config.service_name)
 
-# 타이타닉 전용 — adapter.inbound.api.v1 의 titanic 라우터만 로드
-from labzang.apps.dash.kaggle.santander.adapter.inbound.api.v1 import (  # noqa: E402
-    titanic_router,
+# 타이타닉 전용 — command/query 라우터 로드
+from labzang.apps.ai.percept.detective.titanic.adapter.inbound.api.v1.titanic_command_router import (  # noqa: E402
+    router as titanic_command_router,
+)
+from labzang.apps.ai.percept.detective.titanic.adapter.inbound.api.v1.titanic_query_router import (  # noqa: E402
+    router as titanic_query_router,
 )
 
 app = FastAPI(
@@ -78,8 +81,9 @@ app.add_middleware(
 if LoggingMiddleware is not None:
     app.add_middleware(LoggingMiddleware)
 
-# 타이타닉 라우터만 등록 (prefix는 라우터에 정의됨)
-app.include_router(titanic_router)
+# 타이타닉 라우터 등록
+app.include_router(titanic_command_router, prefix="/titanic")
+app.include_router(titanic_query_router, prefix="/titanic/query")
 
 
 @app.get("/")

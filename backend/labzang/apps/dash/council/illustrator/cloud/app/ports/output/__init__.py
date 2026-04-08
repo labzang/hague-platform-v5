@@ -1,4 +1,4 @@
-from labzang.apps.dash.wordcloud.samsung_report.application.ports.output.wordcloud_ports import (
+from labzang.apps.dash.council.illustrator.cloud.app.ports.output.wordcloud_ports import (
     ImageStoragePort,
     TextSourcePort,
 )

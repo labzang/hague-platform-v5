@@ -16,8 +16,8 @@ from sklearn.svm import SVC
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.model_selection import KFold, cross_val_score
 
-from labzang.apps.dash.kaggle.santander.application.dtos.titanic_dto import TitanicDatasetDTO
-from labzang.apps.dash.kaggle.santander.application.ports.output.titanic_repo_port import (
+from labzang.apps.ai.percept.detective.santander.application.dtos.titanic_dto import TitanicDatasetDTO
+from labzang.apps.ai.percept.detective.santander.application.ports.output.titanic_repo_port import (
     ModelRunnerPort,
     PreprocessorPort,
     TitanicDataPort,

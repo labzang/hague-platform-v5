@@ -2,7 +2,7 @@
 도메인 값 객체 (순수: 외부 라이브러리 미참조)
 - 비즈니스 의미가 있는 불변 값만. 데이터셋/결과 DTO는 application/dto.
 """
-from labzang.apps.dash.geospatial.domain.value_objects.seoul_crime_vo import (
+from labzang.apps.dash.council.illustrator.folium.domain.value_objects.seoul_crime_vo import (
     MurderArrested,
     MurderOccurred,
     PoliceStationName,
@@ -17,7 +17,7 @@ from labzang.apps.dash.geospatial.domain.value_objects.seoul_crime_vo import (
     ViolenceArrested,
     ViolenceOccurred,
 )
-from labzang.apps.dash.kaggle.santander.domain.value_objects.titanic_vo import (
+from labzang.apps.ai.percept.detective.santander.domain.value_objects.titanic_vo import (
     Age,
     Embarked,
     Fare,

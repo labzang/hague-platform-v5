@@ -11,20 +11,25 @@ from __future__ import annotations
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from labzang.apps.ext.guard.adapter.inbound.api.v1.auth_router import router as auth_router
-from labzang.apps.com.chat.adapter.inbound.api.v1.chat_router import router as chat_router
-from labzang.apps.com.chat.adapter.inbound.api.v1.search_router import router as search_router
-from labzang.apps.ext.crawler.adapter.inbound.api.v1.crawler_router import router as crawler_router
-from labzang.apps.dash.kaggle.santander.adapter.inbound.api.v1 import (
+from labzang.apps.ai.intel.advisor.inquiry.adapter.inbound.api.v1.chat_router import (
+    router as chat_router,
+)
+from labzang.apps.ai.intel.advisor.inquiry.adapter.inbound.api.v1.search_router import (
+    router as search_router,
+)
+from labzang.apps.ai.percept.detective.santander.adapter.inbound.api.v1 import (
     seoul_crime_router,
     titanic_router,
     us_unemployment_router,
     wordcloud_router,
 )
-from labzang.apps.ai.transformer.application.koelectra.koelectra_router import (
-    router as koelectra_router,
+from labzang.apps.ext.bridge.crawler.music.adapter.inbound.api.v1.crawler_router import (
+    router as crawler_router,
 )
-from labzang.apps.ext.guard.adapter.outbound.orm.user_orm import UserORM  # noqa: F401
+from labzang.apps.ext.shield.guard.gateway.adapter.inbound.api.v1.auth_router import (
+    router as auth_router,
+)
+from labzang.apps.ext.shield.guard.gateway.adapter.outbound.orm.user_orm import UserORM  # noqa: F401
 from labzang.core.config import ChatbotServiceConfig
 from labzang.core.database import engine
 from labzang.core.middleware import LoggingMiddleware
@@ -59,11 +64,6 @@ def create_monolith_app() -> FastAPI:
     app.include_router(seoul_crime_router, prefix="/seoul")
     app.include_router(wordcloud_router, prefix="/wordcloud")
     app.include_router(us_unemployment_router, prefix="/usa")
-    app.include_router(
-        koelectra_router,
-        prefix="/api/transformer/koelectra",
-        tags=["KoELECTRA 감성분석"],
-    )
 
     @app.get("/health", tags=["health"])
     async def health() -> dict[str, str]:

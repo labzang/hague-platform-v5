@@ -7,7 +7,7 @@ from typing import Any, List, Optional
 
 import googlemaps
 
-from labzang.apps.dash.geospatial.seoul_crime.application.ports.output.geocoding_port import (
+from labzang.apps.dash.council.illustrator.folium.application.ports.output.geocoding_port import (
     GeocodingPort,
 )
 

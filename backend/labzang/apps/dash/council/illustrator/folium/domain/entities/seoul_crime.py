@@ -7,19 +7,35 @@
 from dataclasses import dataclass
 from typing import Optional
 
-from labzang.apps.dash.geospatial.domain.value_objects.seoul_crime_vo import (
-    MurderArrested,
-    MurderOccurred,
+from labzang.apps.dash.council.illustrator.folium.domain.value_objects.seoul_crime_vo import (
     PoliceStationName,
-    RapeArrested,
-    RapeOccurred,
-    RobberyArrested,
-    RobberyOccurred,
     SeoulDistrictName,
-    TheftArrested,
-    TheftOccurred,
     ViolenceArrested,
     ViolenceOccurred,
+)
+from labzang.apps.dash.council.illustrator.folium.domain.value_objects.seoul_crime_vo import (
+    MurderOccurred,
+)
+from labzang.apps.dash.council.illustrator.folium.domain.value_objects.seoul_crime_vo import (
+    MurderArrested,
+)
+from labzang.apps.dash.council.illustrator.folium.domain.value_objects.seoul_crime_vo import (
+    RobberyOccurred,
+)
+from labzang.apps.dash.council.illustrator.folium.domain.value_objects.seoul_crime_vo import (
+    RobberyArrested,
+)
+from labzang.apps.dash.council.illustrator.folium.domain.value_objects.seoul_crime_vo import (
+    RapeOccurred,
+)
+from labzang.apps.dash.council.illustrator.folium.domain.value_objects.seoul_crime_vo import (
+    RapeArrested,
+)
+from labzang.apps.dash.council.illustrator.folium.domain.value_objects.seoul_crime_vo import (
+    TheftOccurred,
+)
+from labzang.apps.dash.council.illustrator.folium.domain.value_objects.seoul_crime_vo import (
+    TheftArrested,
 )
 
 

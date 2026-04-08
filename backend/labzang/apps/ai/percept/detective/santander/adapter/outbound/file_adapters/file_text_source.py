@@ -4,7 +4,7 @@
 """
 from pathlib import Path
 
-from labzang.apps.dash.wordcloud.samsung_report.application.ports.output.wordcloud_ports import TextSourcePort
+from labzang.apps.dash.council.illustrator.cloud.app.ports.output.wordcloud_ports import TextSourcePort
 
 # use case와 약속한 키
 KEY_SAMSUNG_REPORT = "samsung_report"

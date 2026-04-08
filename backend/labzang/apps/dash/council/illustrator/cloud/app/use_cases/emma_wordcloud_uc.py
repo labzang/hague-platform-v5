@@ -6,11 +6,11 @@ import base64
 from datetime import datetime
 from typing import Any, Dict
 
-from labzang.apps.dash.wordcloud.samsung_report.application.ports.output import (
+from labzang.apps.dash.council.illustrator.cloud.app.ports.output import (
     TextSourcePort,
     ImageStoragePort,
 )
-from labzang.apps.dash.wordcloud.samsung_report.application.services.emma_wordcloud_service import (
+from labzang.apps.dash.council.illustrator.cloud.app.services.emma_wordcloud_service import (
     EmmaWordcloudService,
 )
 

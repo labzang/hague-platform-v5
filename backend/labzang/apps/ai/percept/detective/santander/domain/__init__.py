@@ -5,8 +5,8 @@
 - 데이터셋/전처리·평가 결과 DTO는 application/dto
 """
 
-from labzang.apps.dash.kaggle.santander.domain.entities import Passenger, SeoulCrime
-from labzang.apps.dash.kaggle.santander.domain.value_objects import (
+from labzang.apps.ai.percept.detective.santander.domain.entities import Passenger, SeoulCrime
+from labzang.apps.ai.percept.detective.santander.domain.value_objects import (
     Age,
     Embarked,
     Fare,

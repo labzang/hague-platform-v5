@@ -6,16 +6,16 @@ from fastapi import APIRouter, Depends, HTTPException, Query
 from typing import Dict, Any, Optional
 import logging
 
-from labzang.apps.dash.kaggle.santander.adapter.inbound.dependencies import (
+from labzang.apps.ai.percept.detective.santander.adapter.inbound.dependencies import (
     get_emma_wordcloud_use_case,
     get_samsung_wordcloud_use_case,
     get_wordcloud_resp_dep,
 )
-from labzang.apps.dash.wordcloud.samsung_report.application.use_cases.emma_wordcloud import NLTKService
-from labzang.apps.dash.wordcloud.samsung_report.application.use_cases.emma_wordcloud_uc import (
+from labzang.apps.dash.council.illustrator.cloud.app.use_cases.emma_wordcloud import NLTKService
+from labzang.apps.dash.council.illustrator.cloud.app.use_cases.emma_wordcloud_uc import (
     GenerateEmmaWordcloudUC,
 )
-from labzang.apps.dash.wordcloud.samsung_report.application.use_cases.samsung_wordcloud_uc import (
+from labzang.apps.dash.council.illustrator.cloud.app.use_cases.samsung_wordcloud_uc import (
     GenerateSamsungWordcloudUC,
 )
 

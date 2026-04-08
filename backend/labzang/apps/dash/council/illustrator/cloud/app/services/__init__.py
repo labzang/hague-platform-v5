@@ -1,7 +1,7 @@
-from labzang.apps.dash.wordcloud.samsung_report.application.services.emma_wordcloud_service import (
+from labzang.apps.dash.council.illustrator.cloud.app.services.emma_wordcloud_service import (
     EmmaWordcloudService,
 )
-from labzang.apps.dash.wordcloud.samsung_report.application.services.samsung_wordcloud_service import (
+from labzang.apps.dash.council.illustrator.cloud.app.services.samsung_wordcloud_service import (
     SamsungWordcloudService,
 )
 
